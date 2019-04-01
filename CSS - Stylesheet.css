@@ -1,36 +1,38 @@
-.button {
-    position: absolute;
-    left: 100px;
-    top: 100px;
-    height: 200px;
-    width: 200px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    z-index: 1
-  }
-  
-  .button:hover {
-    position: absolute;
-    left: 100px;
-    top: 100px;
-    height: 190px;
-    width: 190px;
-    background-color: red;
-    border-radius: 50%;
-    z-index: 0
-  }
+ .buttonCircle {
+  position: absolute;
+  left: 500px;
+  top: 300px;
+  height: 200px;
+  width: 200px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 1;
+  transition-duration: 0.4s;
+}
+
+ .buttonCircle:hover {
+  position: absolute;
+  left: 550px;
+  top: 350px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+#header {
+  background-color: rgb(188, 198, 245);
+  height: 10%;
+  text-align: center;
+}
 
   h1{
-   border: 8px solid #7F01FE;
-   border-radius: 25px;
+   
   }
 
   h2{
-  border: 8px solid #7F01FE;
-   border-radius: 25px;
+  
   }
 
-  body{
-    background-color: slategrey;
-  }
