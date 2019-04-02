@@ -1,4 +1,52 @@
- .buttonCircle {
+ .button1Circle {
+  position: absolute;
+  left: 700px;
+  top: 500px;
+  height: 50px;
+  width: 50px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 1;
+  transition-duration: 0.4s;
+}
+
+ .button1Circle:hover {
+  position: absolute;
+  left: 705px;
+  top: 505px;
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.button2Circle {
+  position: absolute;
+  left: 700px;
+  top: 500px;
+  height: 75px;
+  width: 75px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 0;
+  transition-duration: 0.4s;
+}
+
+ .button2Circle:hover {
+  position: absolute;
+  left: 705px;
+  top: 505px;
+  height: 65px;
+  width: 65px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.button3Circle {
   position: absolute;
   left: 500px;
   top: 300px;
@@ -7,11 +55,11 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  z-index: 1;
+  z-index: -1;
   transition-duration: 0.4s;
 }
 
- .buttonCircle:hover {
+ .button3Circle:hover {
   position: absolute;
   left: 550px;
   top: 350px;
@@ -19,7 +67,55 @@
   width: 100px;
   background-color: red;
   border-radius: 50%;
-  z-index: 0;
+  z-index: -1;
+}
+
+.button4Circle {
+  position: absolute;
+  left: 500px;
+  top: 300px;
+  height: 200px;
+  width: 200px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: -2;
+  transition-duration: 0.4s;
+}
+
+ .button4Circle:hover {
+  position: absolute;
+  left: 550px;
+  top: 350px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: -2;
+}
+
+.button5Circle {
+  position: absolute;
+  left: 500px;
+  top: 300px;
+  height: 200px;
+  width: 200px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: -3;
+  transition-duration: 0.4s;
+}
+
+ .button5Circle:hover {
+  position: absolute;
+  left: 550px;
+  top: 350px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: -3;
 }
 
 #header {
