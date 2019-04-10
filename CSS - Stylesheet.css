@@ -1,9 +1,35 @@
+/* Each target's position from top and left is incremented by 15 (add each time) to centre each circle */
+
+.button0Circle {
+  position: absolute;
+  left: 285px;
+  top: 385px;
+  height: 75px;
+  width: 75px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  z-index: 2;
+  transition-duration: 0.4s;
+}
+
+ .button0Circle:hover {
+  position: absolute;
+  left: 290px;
+  top: 390px;
+  height: 65px;
+  width: 65px;
+  background-color: red;
+  border-radius: 50%;
+  z-index: 2;
+}
+ 
  .button1Circle {
   position: absolute;
-  left: 700px;
-  top: 500px;
-  height: 50px;
-  width: 50px;
+  left: 260px;
+  top: 360px;
+  height: 130px;
+  width: 130px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -13,10 +39,10 @@
 
  .button1Circle:hover {
   position: absolute;
-  left: 705px;
-  top: 505px;
-  height: 40px;
-  width: 40px;
+  left: 265px;
+  top: 365px;
+  height: 120px;
+  width: 120px;
   background-color: red;
   border-radius: 50%;
   z-index: 1;
@@ -24,10 +50,10 @@
 
 .button2Circle {
   position: absolute;
-  left: 700px;
-  top: 500px;
-  height: 75px;
-  width: 75px;
+  left: 232.5px;
+  top: 332.5px;
+  height: 185px;
+  width: 185px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -37,10 +63,10 @@
 
  .button2Circle:hover {
   position: absolute;
-  left: 705px;
-  top: 505px;
-  height: 65px;
-  width: 65px;
+  left: 237.5px;
+  top: 337.5px;
+  height: 175px;
+  width: 175px;
   background-color: red;
   border-radius: 50%;
   z-index: 0;
@@ -48,10 +74,10 @@
 
 .button3Circle {
   position: absolute;
-  left: 500px;
-  top: 300px;
-  height: 200px;
-  width: 200px;
+  left: 205px;
+  top: 305px;
+  height: 240px;
+  width: 240px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -61,10 +87,10 @@
 
  .button3Circle:hover {
   position: absolute;
-  left: 550px;
-  top: 350px;
-  height: 100px;
-  width: 100px;
+  left: 210px;
+  top: 310px;
+  height: 230px;
+  width: 230px;
   background-color: red;
   border-radius: 50%;
   z-index: -1;
@@ -72,10 +98,10 @@
 
 .button4Circle {
   position: absolute;
-  left: 500px;
-  top: 300px;
-  height: 200px;
-  width: 200px;
+  left: 177.5px;
+  top: 277.5px;
+  height: 295px;
+  width: 295px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -85,10 +111,10 @@
 
  .button4Circle:hover {
   position: absolute;
-  left: 550px;
-  top: 350px;
-  height: 100px;
-  width: 100px;
+  left: 182.5px;
+  top: 282.5px;
+  height: 285px;
+  width: 285px;
   background-color: red;
   border-radius: 50%;
   z-index: -2;
@@ -96,10 +122,10 @@
 
 .button5Circle {
   position: absolute;
-  left: 500px;
-  top: 300px;
-  height: 200px;
-  width: 200px;
+  left: 150px;
+  top: 250px;
+  height: 350px;
+  width: 350px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -109,10 +135,10 @@
 
  .button5Circle:hover {
   position: absolute;
-  left: 550px;
-  top: 350px;
-  height: 100px;
-  width: 100px;
+  left: 155px;
+  top: 255px;
+  height: 340px;
+  width: 340px;
   background-color: red;
   border-radius: 50%;
   z-index: -3;
