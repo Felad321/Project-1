@@ -1,5 +1,21 @@
 /* Each target's position from top and left is incremented by 15 (add each time) to centre each circle */
 
+.rightElements {
+  float: right;
+}
+
+.loginButton {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+
+.loginButton:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
 .button0Circle {
   position: absolute;
   left: 287.5px;
@@ -11,6 +27,7 @@
   display: inline-block;
   z-index: 2;
   transition-duration: 0.4s;
+  font-size: 16px;
 }
 
  .button0Circle:hover {
@@ -22,6 +39,7 @@
   background-color: red;
   border-radius: 50%;
   z-index: 2;
+  font-size: 16px;
 }
  
  .button1Circle {
