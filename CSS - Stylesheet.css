@@ -3,10 +3,11 @@
 .rightElements {
   float: right;
 }
-
+/* oh god fix these colours later */
 .loginButton {
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
+  border-radius: 8px;
 }
 
 
