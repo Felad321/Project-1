@@ -2,8 +2,8 @@
 
 .button0Circle {
   position: absolute;
-  left: 285px;
-  top: 385px;
+  left: 287.5px;
+  top: 387.5px;
   height: 75px;
   width: 75px;
   background-color: #bbb;
@@ -15,8 +15,8 @@
 
  .button0Circle:hover {
   position: absolute;
-  left: 290px;
-  top: 390px;
+  left: 292.5px;
+  top: 392.5px;
   height: 65px;
   width: 65px;
   background-color: red;
