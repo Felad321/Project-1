@@ -8,12 +8,16 @@
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   border-radius: 8px;
+  font-size: 24px;
+  background-color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 
 .loginButton:hover {
   background-color: #4CAF50; /* Green */
   color: white;
+  font-size: 24px;
 }
 
 
