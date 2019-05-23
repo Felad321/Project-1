@@ -1,5 +1,3 @@
-// yet to be started ( s o o n )
-
 
 //document.getElementById("btnLogin").addEventListener("click", storeNames);
 
