@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-// yet to be started ( s o o n )
->>>>>>> 5a9f8096859926cc1102ce6d0e6a21852c097706
 
 //document.getElementById("btnLogin").addEventListener("click", storeNames);
 
