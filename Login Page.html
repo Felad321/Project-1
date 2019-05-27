@@ -9,17 +9,33 @@
 <!--<script src="Project JS.js"></script> -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
 
-<!--  Header of page  -->
+<div id="commonFeatures">
+
 <div>
 <body class="body2">
     <link rel="stylesheet" type="css/text" href="CSS - Stylesheet.css">
         <div class="container-fluid" id="header" >
         <h1 class="display-1"> Rifle Shooting Scoring System </h1>
 </div>
+
+</div>
+
+<div id="loginPage">
+        <!-- L O G I N   P A G E  -->
+
+
+<!--  Header of page  -->
+<div>
+<!--<div>
+<body class="body2">
+    <link rel="stylesheet" type="css/text" href="CSS - Stylesheet.css">
+        <div class="container-fluid" id="header" >
+        <h1 class="display-1"> Rifle Shooting Scoring System </h1>
+</div> -->
 <div class="container-fluid">
         <h3 class="text-muted"> Login Page </h3>
 </div>
-</div>
+</div> 
 <div class="container-fluid">
         <span class="border">  
         <br>
@@ -31,7 +47,7 @@
 <!-- <input type="text" id="usernameInput"> Enter your name here. </input>-->
 <br>
 </div>
-        <form action="Target Page.html" method="POST">
+        <!--<form action="Target Page.html" method="POST">-->
          <!--<input name="firstName"> Enter your first name here -->
         <input id="firstName"> Enter your first name here 
          <br>
@@ -39,8 +55,8 @@
          <input id="lastName"> Enter your last name here
         <br>
         <br>
-         <button id="btnLogin" type="submit" class="loginButton">Submit</button>
- </form>
+         <button id="btnLogin" type="submit" class="loginButton" onclick="hideFunc()">Submit</button>
+ <!--</form> -->
 </div>
 </body>
 </html>
@@ -50,6 +66,60 @@
     class="text-muted"
     style='background-color:rgb(32, 72, 99); color:rgb(255, 255, 255);'
 -->
+</div>
+<script type="text/javascript" src="Project JS.js"></script>
+
+</div>
+
+<div id="targetPage" style="display: none">
+
+        <!-- T A R G E T   P A G E -->
+<body>
+<!--    Header of page (Target version :D)  -->
+<div>
+    <body class="body2">
+    </div>
+<!--<div>
+        <div class="container-fluid" id="header" >
+        <h1 class="display-1"> Rifle Shooting Scoring System  </h1>
+    </div> -->
+    <div class="container-fluid">
+    <h3 class="text-muted"> Target Page </h3>
+    </div>
+    <div class="container-fluid">
+    <span class="border">  
+        <br>
+        <p class="lead"> Enter filler content here! :)</p> 
+    </span>
+    </div>
+
+
+<div class="rightElements">
+<!-- Scoring elements & other information will be here. Elements should be on right side of page (hopefully)-->
+<!-- <textarea 
+rows = "10"
+cols = "20"> 
+</textarea> -->
+<svg width="400" height="100">
+    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+    
+    <text x="0" y="15" fill="red">Information goes here :)</text>
+</svg>
+</div>
+
+
+
+<div>
+ <!-- Below are all of the target buttons used for the shooting target -->
+<button type="button" class="button0Circle" id="btnBegin"> ok </button>
+<button type="button" class="button1Circle" id="btnBegin"> ok </button>
+<button type="button" class="button2Circle" id="btnBegin"> ok </button>
+<button type="button" class="button3Circle" id="btnBegin"> ok </button>
+<button type="button" class="button4Circle" id="btnBegin"> ok </button>
+<button type="button" class="button5Circle" id="btnBegin"> ok </button>  
+</div> 
+</div>
+
 </div>
 <script type="text/javascript" src="Project JS.js"></script>
 </head>
