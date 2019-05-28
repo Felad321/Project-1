@@ -32,3 +32,6 @@ function hideFunc() {
     y.style.display = "block";
   }
 }
+
+
+
