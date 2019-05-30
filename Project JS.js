@@ -2,7 +2,6 @@ document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 var totalScore = 0;
 
-
 // This function created the user object and stores this object in local storage
 function storeNames() {
  
@@ -35,32 +34,32 @@ function hideFunc() {
   }
 }
 
-function scoreFive(totalScore,scoreOutput){
+function scoreFive(scoreOutput){
   totalScore = totalScore + 5;
   console.log(totalScore);
 }
 
-function scoreSix(totalScore,scoreOutput){
+function scoreSix(scoreOutput){
   totalScore = totalScore + 6;
   console.log(totalScore);
 }
 
-function scoreSeven(totalScore,scoreOutput){
+function scoreSeven(scoreOutput){
   totalScore = totalScore + 7;
   console.log(totalScore);
 }
 
-function scoreEight(totalScore,scoreOutput){
+function scoreEight(scoreOutput){
   totalScore = totalScore + 8;
   console.log(totalScore);
 }
 
-function scoreNine(totalScore,scoreOutput){
+function scoreNine(scoreOutput){
   totalScore = totalScore + 9;
   console.log(totalScore);
 }
 
-function scoreTen(totalScore,scoreOutput){
+function scoreTen(scoreOutput){
   totalScore = totalScore + 10;
   console.log(totalScore);
 }
