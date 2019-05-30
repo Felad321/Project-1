@@ -1,7 +1,7 @@
 document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 var totalScore = 0;
-var scoreOutput = document.getElementById("targetScoreOutput").value
+var scoreOutput = 0;
 
 
 // This function created the user object and stores this object in local storage
