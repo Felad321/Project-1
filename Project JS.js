@@ -35,9 +35,8 @@ function hideFunc() {
   }
 }
 
-document.getElementById("targetFive").addEventListener("click", scoreFive)
 
-function scoreFive{
+function scoreFive(totalScore) {
   totalScore += 5;
-  console.log = totalScore;
+  console.log(totalScore)
 }
