@@ -75,10 +75,28 @@
 
 <div class="rightElements">
 <!-- Scoring elements & other information will be here. Elements should be on right side of page (hopefully)-->
-<svg width="400" height="100">
+<svg width="400" height="100" id="usernameOutput">
+    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/>
+    
+    <text x="0" y="15" fill="red">Username n stuff</text>
+</svg>
+<br>
+<svg width="400" height="100" id="scoreOutput">
     <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
     
-    <text x="0" y="15" fill="red">Information goes here :)</text>
+    <text x="0" y="15" fill="red">Current Score</text>
+</svg>
+<br>
+<svg width="400" height="100" id="shootDataOutput">
+    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+    
+    <text x="0" y="15" fill="red">Other shoot data</text>
+</svg>
+<br>
+<svg width="400" height="100" id="placeholderOutput">
+    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+    
+    <text x="0" y="15" fill="red">Spare box</text>
 </svg>
 </div>
 
@@ -86,12 +104,12 @@
 
 <div>
  <!-- Below are all of the target buttons used for the shooting target -->
-<button type="button" class="button0Circle" id="btnBegin"> ok </button>
-<button type="button" class="button1Circle" id="btnBegin"> ok </button>
-<button type="button" class="button2Circle" id="btnBegin"> ok </button>
-<button type="button" class="button3Circle" id="btnBegin"> ok </button>
-<button type="button" class="button4Circle" id="btnBegin"> ok </button>
-<button type="button" class="button5Circle" id="btnBegin"> ok </button>  
+<button type="button" class="button0Circle" id="targetTen"> ok </button>
+<button type="button" class="button1Circle" id="targetNine"> ok </button>
+<button type="button" class="button2Circle" id="targetEight"> ok </button>
+<button type="button" class="button3Circle" id="targetSeven"> </button>
+<button type="button" class="button4Circle" id="targetSix"> ok </button>
+<button type="button" class="button5Circle" id="targetFive"> ok </button>  
 </div> 
 </div>
 

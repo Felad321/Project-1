@@ -1,6 +1,8 @@
   
 document.getElementById("btnLogin").addEventListener("click", storeNames)
 
+
+
 // This function created the user object and stores this object in local storage
 function storeNames() {
  
