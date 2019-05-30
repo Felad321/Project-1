@@ -1,4 +1,4 @@
- document.getElementById("btnLogin").addEventListener("click", storeNames)
+document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 var totalScore = 0;
 
@@ -35,8 +35,32 @@ function hideFunc() {
   }
 }
 
-
-function scoreFive(totalScore) {
+function scoreFive(totalScore){
   totalScore += 5;
-  console.log(totalScore)
+  console.log(totalScore);
+}
+
+function scoreSix(totalScore){
+  totalScore += 6;
+  console.log(totalScore);
+}
+
+function scoreSeven(totalScore){
+  totalScore += 7;
+  console.log(totalScore);
+}
+
+function scoreEight(totalScore){
+  totalScore += 8;
+  console.log(totalScore);
+}
+
+function scoreNine(totalScore){
+  totalScore += 9;
+  console.log(totalScore);
+}
+
+function scoreTen(totalScore){
+  totalScore += 10;
+  console.log(totalScore);
 }
