@@ -1,6 +1,6 @@
-  
-document.getElementById("btnLogin").addEventListener("click", storeNames)
+ document.getElementById("btnLogin").addEventListener("click", storeNames)
 
+var totalScore = 0;
 
 
 // This function created the user object and stores this object in local storage
@@ -35,5 +35,9 @@ function hideFunc() {
   }
 }
 
+document.getElementById("targetFive").addEventListener("click", scoreFive)
 
-
+function scoreFive{
+  totalScore += 5;
+  console.log = totalScore;
+}
