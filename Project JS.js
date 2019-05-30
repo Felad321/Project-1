@@ -2,6 +2,7 @@ document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 var totalScore = 0;
 
+
 // This function created the user object and stores this object in local storage
 function storeNames() {
  
@@ -62,6 +63,5 @@ function scoreNine(scoreOutput){
 function scoreTen(scoreOutput){
   totalScore = totalScore + 10;
   console.log(totalScore);
+  document.getElementById("targetScoreOutput").innerHTML = totalScore;
 }
-
-document.getElementById("targetScoreOutput").value = "Your score is " + totalScore;
