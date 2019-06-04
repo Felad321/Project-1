@@ -1,7 +1,7 @@
 document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 var totalScore = 0;
-
+var scoreOutput = document.getElementById("targetScoreOutput").value
 
 // This function created the user object and stores this object in local storage
 function storeNames() {
@@ -36,32 +36,40 @@ function hideFunc() {
 }
 
 function scoreFive(scoreOutput){
-  totalScore = totalScore + 5;
+  totalScore += 5;
   console.log(totalScore);
+  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
 }
 
 function scoreSix(scoreOutput){
-  totalScore = totalScore + 6;
+  totalScore += 6;
   console.log(totalScore);
+  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
 }
 
 function scoreSeven(scoreOutput){
-  totalScore = totalScore + 7;
+  totalScore += 7;
   console.log(totalScore);
+  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
 }
 
 function scoreEight(scoreOutput){
-  totalScore = totalScore + 8;
+  totalScore += 8;
   console.log(totalScore);
+  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
 }
 
 function scoreNine(scoreOutput){
-  totalScore = totalScore + 9;
+  totalScore += 9;
   console.log(totalScore);
+  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
 }
 
 function scoreTen(scoreOutput){
-  totalScore = totalScore + 10;
+  totalScore += 10;
   console.log(totalScore);
-  document.getElementById("targetScoreOutput").innerHTML = totalScore;
+  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
 }
+
+
+// Stopwat 
