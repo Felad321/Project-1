@@ -1,7 +1,7 @@
 document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 var totalScore = 0;
-var scoreOutput = document.getElementById("targetScoreOutput")
+var scoreOutput = 0;
 
 // This function created the user object and stores this object in local storage
 function storeNames() {
@@ -33,10 +33,6 @@ function hideFunc() {
     x.style.display = "none";
     y.style.display = "block";
   }
-
-
-  
-
 }
 
 function scoreFive(scoreOutput){
@@ -72,10 +68,5 @@ function scoreNine(scoreOutput){
 function scoreTen(scoreOutput){
   totalScore += 10;
   console.log(totalScore);
-  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
+  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
-
-
-// Stopwatch code taken from stack overflow, user maček
-// source: https://stackoverflow.com/questions/20318822/how-to-create-a-stopwatch-using-javascript 
-
