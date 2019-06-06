@@ -14,6 +14,7 @@ function storeNames() {
 
   console.log("first is " + userEntered.personFirstName);
   console.log("Last is " + userEntered.personLastName);
+  document.getElementById("targetUsernameOutput").innerHTML = userEntered.personFirstName + " " + userEntered.personLastName;
 
   // Stores the user object in local storage
   localStorage.setItem("userEntered", JSON.stringify(userEntered));
@@ -62,7 +63,6 @@ function scoreEight(scoreOutput){
 function scoreNine(scoreOutput){
   totalScore += 9;
   console.log(totalScore);
-  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
 
