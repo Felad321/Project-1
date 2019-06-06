@@ -38,31 +38,31 @@ function hideFunc() {
 function scoreFive(scoreOutput){
   totalScore += 5;
   console.log(totalScore);
-  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
+  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
 
 function scoreSix(scoreOutput){
   totalScore += 6;
   console.log(totalScore);
-  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
+  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
 
 function scoreSeven(scoreOutput){
   totalScore += 7;
   console.log(totalScore);
-  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
+  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
 
 function scoreEight(scoreOutput){
   totalScore += 8;
   console.log(totalScore);
-  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
+  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
 
 function scoreNine(scoreOutput){
   totalScore += 9;
   console.log(totalScore);
-  document.getElementById("targetScoreOutput").value = "Total score is " + totalScore;
+ document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
 
 function scoreTen(scoreOutput){
@@ -70,3 +70,6 @@ function scoreTen(scoreOutput){
   console.log(totalScore);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
+
+
+// Stopwat 
