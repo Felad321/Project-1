@@ -62,7 +62,11 @@ function scoreEight(scoreOutput){
 function scoreNine(scoreOutput){
   totalScore += 9;
   console.log(totalScore);
+<<<<<<< HEAD
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
+=======
+ document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
+>>>>>>> 737c76767b2c47ca29fdd9723064e82edebf71e4
 }
 
 function scoreTen(scoreOutput){
@@ -70,3 +74,6 @@ function scoreTen(scoreOutput){
   console.log(totalScore);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
+
+
+// Stopwat 
