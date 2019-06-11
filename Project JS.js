@@ -76,6 +76,14 @@ function scoreTen(scoreOutput){
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
 }
 
+var targetHit = document.getElementById("targetTen", "targetNine", "targetEight", "targetSeven", "targetSix", "targetFive")
+var count = 0;
+targetHit.onclick = function(){
+  count += 1;
+  document.getElementById("")
+}
+
+
 
 // Stopwatch (maybe make seperate file)
 
