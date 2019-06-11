@@ -1,7 +1,8 @@
-document.getElementById("btnLogin").addEventListener("click", storeNames)
+//document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 var totalScore = 0;
 var scoreOutput = 0;
+var stopwatch;
 
 // This function created the user object and stores this object in local storage
 function storeNames() {
@@ -79,7 +80,7 @@ function scoreTen(scoreOutput){
 
 // Stopwatch (maybe make seperate file)
 
-const Stopwatch = function(elem, options) {
+    Stopwatch = function(elem, options) {
   let timer = createTimer(),
     startButton = createButton("start", start),
     stopButton = createButton("stop", stop),

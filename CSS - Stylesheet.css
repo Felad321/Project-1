@@ -31,7 +31,7 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  z-index: 2;
+  z-index: 5;
   transition-duration: 0.4s;
   font-size: 16px;
 }
@@ -44,7 +44,7 @@
   width: 65px;
   background-color: red;
   border-radius: 50%;
-  z-index: 2;
+  z-index: 5;
   font-size: 16px;
 }
  
@@ -57,7 +57,7 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  z-index: 1;
+  z-index: 4;
   transition-duration: 0.4s;
 }
 
@@ -69,7 +69,7 @@
   width: 120px;
   background-color: red;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 4;
 }
 
 .button2Circle {
@@ -81,7 +81,7 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  z-index: 0;
+  z-index: 3;
   transition-duration: 0.4s;
 }
 
@@ -93,7 +93,7 @@
   width: 175px;
   background-color: red;
   border-radius: 50%;
-  z-index: 0;
+  z-index: 3;
 }
 
 .button3Circle {
@@ -105,7 +105,7 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  z-index: -1;
+  z-index: 2;
   transition-duration: 0.4s;
 }
 
@@ -117,7 +117,7 @@
   width: 230px;
   background-color: red;
   border-radius: 50%;
-  z-index: -1;
+  z-index: 2;
 }
 
 .button4Circle {
@@ -129,7 +129,7 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  z-index: -2;
+  z-index: 1;
   transition-duration: 0.4s;
 }
 
@@ -141,7 +141,7 @@
   width: 285px;
   background-color: red;
   border-radius: 50%;
-  z-index: -2;
+  z-index: 1;
 }
 
 .button5Circle {
@@ -153,7 +153,7 @@
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
-  z-index: -3;
+  z-index: 0;
   transition-duration: 0.4s;
 }
 
@@ -165,7 +165,7 @@
   width: 340px;
   background-color: red;
   border-radius: 50%;
-  z-index: -3;
+  z-index: 0;
 }
 
 #header {
