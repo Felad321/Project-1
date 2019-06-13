@@ -1,4 +1,6 @@
 //document.getElementById("btnLogin").addEventListener("click", storeNames)
+    
+document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 var totalScore = 0;
 var scoreOutput = 0;
@@ -40,17 +42,21 @@ function hideFunc() {
 }
 
 // Below are the scoring functions, which are called whenever one of the target buttons are clicked
-
+var shotCount = 0
 function scoreFive(scoreOutput){
   totalScore += 5;
-  console.log(totalScore);
+  shotCount += 1;
+  console.log(totalScore, shotCount);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
+  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreSix(scoreOutput){
   totalScore += 6;
-  console.log(totalScore);
+  shotCount += 1;
+  console.log(totalScore, shotCount);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
+  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreSeven(scoreOutput){
