@@ -1,6 +1,5 @@
 //document.getElementById("btnLogin").addEventListener("click", storeNames)
     
-document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 var totalScore = 0;
 var scoreOutput = 0;
@@ -61,27 +60,37 @@ function scoreSix(scoreOutput){
 
 function scoreSeven(scoreOutput){
   totalScore += 7;
-  console.log(totalScore);
+  shotCount += 1;
+  console.log(totalScore, shotCount);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
+  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreEight(scoreOutput){
   totalScore += 8;
-  console.log(totalScore);
+  shotCount += 1;
+  console.log(totalScore, shotCount);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
+  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreNine(scoreOutput){
   totalScore += 9;
-  console.log(totalScore);
+  shotCount += 1;
+  console.log(totalScore, shotCount);
  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
+ document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreTen(scoreOutput){
   totalScore += 10;
-  console.log(totalScore);
+  shotCount += 1;
+  console.log(totalScore, shotCount);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
+  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
+
+
 
 
 // Stopwatch (maybe make seperate file)
