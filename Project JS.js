@@ -1,9 +1,4 @@
 //document.getElementById("btnLogin").addEventListener("click", storeNames)
-    
-
-var totalScore = 0;
-var scoreOutput = 0;
-var stopwatch;
 
 // This function created the user object and stores this object in local storage
 function storeNames() {
@@ -41,55 +36,67 @@ function hideFunc() {
 }
 
 // Below are the scoring functions, which are called whenever one of the target buttons are clicked
+var totalScore = 0;
+var scoreOutput = 0;
+var stopwatch;
 var shotCount = 0
+
+var time = 0;
+var timer = null;
+function incrementTimer () {
+  time += 1;
+}
+
+
+function shotLimit (amount){
+  if(shotCount != 10){
+    shotCount += 1;
+    totalScore += amount;
+  } else {
+    clearInterval(timer);
+    console.log("Time taken was " + time);
+  }
+
+  if (shotCount == 1) {
+    timer = setInterval(incrementTimer, 1000);
+  }
+}
+
 function scoreFive(scoreOutput){
-  totalScore += 5;
-  shotCount += 1;
-  console.log(totalScore, shotCount);
+  shotLimit(5);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
   document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreSix(scoreOutput){
-  totalScore += 6;
-  shotCount += 1;
-  console.log(totalScore, shotCount);
+  shotLimit(6);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
   document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreSeven(scoreOutput){
-  totalScore += 7;
-  shotCount += 1;
-  console.log(totalScore, shotCount);
+  shotLimit(7);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
   document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreEight(scoreOutput){
-  totalScore += 8;
-  shotCount += 1;
-  console.log(totalScore, shotCount);
+  shotLimit(8);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
   document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreNine(scoreOutput){
-  totalScore += 9;
-  shotCount += 1;
-  console.log(totalScore, shotCount);
+  shotLimit(9);
  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
 function scoreTen(scoreOutput){
-  totalScore += 10;
-  shotCount += 1;
-  console.log(totalScore, shotCount);
+  shotLimit(10);
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
   document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
-
 
 
 
@@ -206,4 +213,3 @@ for (var i = 0, len = elems.length; i < len; i++) {
   new Stopwatch(elems[i]);
 }
 
-// Github sync test
