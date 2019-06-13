@@ -205,3 +205,5 @@ var elems = document.getElementsByClassName("timer");
 for (var i = 0, len = elems.length; i < len; i++) {
   new Stopwatch(elems[i]);
 }
+
+// Github sync test
