@@ -6,12 +6,17 @@ function storeNames() {
   // The user profile as an object
   var userEntered = {
     personFirstName: document.getElementById("firstName").value,
-    personLastName: document.getElementById("lastName").value
+    personLastName: document.getElementById("lastName").value,
+    personScores: []
+    
   };
 
   console.log("first is " + userEntered.personFirstName);
   console.log("Last is " + userEntered.personLastName);
   document.getElementById("targetUsernameOutput").innerHTML = userEntered.personFirstName + " " + userEntered.personLastName;
+
+  var previousObject = localStorage.getItem("userEntered");
+  console.log(JSON.parse(previousObject))
 
   // Stores the user object in local storage
   localStorage.setItem("userEntered", JSON.stringify(userEntered));
