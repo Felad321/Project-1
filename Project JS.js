@@ -13,10 +13,10 @@ function storeNames() {
 
   var userArray = [];
   userArray.push(userEntered);
-  console.log("array is " + userArray)
+  //console.log("array is " + userArray)
 
-  var userArrayTest = userArray[0];
-  console.log("test is " + JSON.parse(userArrayTest))
+  //var userArrayTest = userArray[0];
+  //console.log(userArrayTest)
 
   console.log("first is " + userEntered.personFirstName);
   console.log("Last is " + userEntered.personLastName);
