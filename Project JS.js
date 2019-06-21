@@ -50,6 +50,7 @@ var time = 0;
 var timer = null;
 function incrementTimer () {
   time += 1;
+document.getElementById("targetShootDataOutput").innerHTML = "Time is " + time + " seconds!";
 }
 
 
@@ -104,3 +105,7 @@ function scoreTen(scoreOutput){
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 97cc5dfe52866f6696fb1be7510d19b0c8326158
