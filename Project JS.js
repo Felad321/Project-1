@@ -143,4 +143,26 @@ function scoreTen(scoreOutput){
   document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
 
+var scores = [];
+
+function sortScores(){
+  var unsortedScores = scores;
+  var sortedScores = [];
+  var highest = 0; 
+  var highestIndex = 0;
+
+while (unsortedScores != 0){
+  highest = unsortedScores[0];
+  highestIndex = 0;
+  for (var i = 0; i < unsortedScores.length; i++){
+    if (unsortedScores[i] > highest){
+      highest = unsortedScores[i];
+      highestIndex = i;
+    }
+  }
+  sortedScores.push(highest);
+  unsortedScores.splice(highestIndex, 1);
+}
+
+}
 
