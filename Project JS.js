@@ -163,6 +163,7 @@ while (unsortedScores != 0){
   sortedScores.push(highest);
   unsortedScores.splice(highestIndex, 1);
 }
-
+scoreboard.value = scores + "\n";
+scores = sortedScores;
 }
 
