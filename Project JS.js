@@ -11,6 +11,13 @@ function storeNames() {
     
   };
 
+  var userArray = [];
+  userArray.push(userEntered);
+  console.log("array is " + userArray)
+
+  var userArrayTest = userArray[0];
+  console.log("test is " + JSON.parse(userArrayTest))
+
   console.log("first is " + userEntered.personFirstName);
   console.log("Last is " + userEntered.personLastName);
   document.getElementById("targetUsernameOutput").innerHTML = userEntered.personFirstName + " " + userEntered.personLastName;
@@ -105,7 +112,3 @@ function scoreTen(scoreOutput){
 }
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 97cc5dfe52866f6696fb1be7510d19b0c8326158
