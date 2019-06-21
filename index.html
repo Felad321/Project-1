@@ -40,19 +40,28 @@
 <br>
 <br>
 </div>
-    <div id="userCreateHTML">
+
+    <div id="choiceElements">
+        <button id="btnChoiceCreate" type="submit" class="loginButton" onclick="showCreate()">Create new user</button>
+        <button id="btnChoiceLogin" type="submit" class="loginButton">Login to an existing user</button>
+    </div>
+<br>
+    <div id="userCreateHTML" style="display: none">
         <input id="firstName"> Enter your first name here 
          <br>
          <input id="lastName"> Enter your last name here
         <br>
         <br>
-         <button id="btnLogin" type="submit" class="loginButton" onclick="hideFunc(), storeNames()">Submit</button>
+         <button id="btnCreateUser" type="submit" class="loginButton" onclick="hideFunc(), storeNames()">Submit</button>
     </div>
 
-    <div id="userExistHTML">
+    <div id="userExistHTML" style="display: none">
+
         <select>
-            
+
         </select>
+        <br>
+        <button id="btnLoginUser" type="submit" class="loginButton" onclick="hideFunc()">Submit</button>
     </div>
 </div>
 
