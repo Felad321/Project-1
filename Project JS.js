@@ -50,6 +50,25 @@ function hideFunc() {
 function showCreate() {
   var x = document.getElementById("userCreateHTML");
   var y = document.getElementById("loginPage");
+  var z = document.getElementById("userExistHTML");
+
+  z.style.display = "none";
+
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+    y.style.display = "block";
+  
+  }
+}
+
+function showLogin() {
+  var x = document.getElementById("userExistHTML");
+  var y = document.getElementById("loginPage");
+  var z = document.getElementById("userCreateHTML");
+
+z.style.display = "none";
 
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -58,11 +77,6 @@ function showCreate() {
     y.style.display = "block";
     
   }
-}
-
-function showLogin() {
-  var x = document.getElementById("loginPage");
-  var y = document.getElementById("targetPage");
 }
 
 // Below are the scoring functions, which are called whenever one of the target buttons are clicked
