@@ -97,10 +97,11 @@ function shotLimit (amount){
   if(shotCount != 10){
     shotCount += 1;
     totalScore += amount;
-  } else {
-    clearInterval(timer);
-    console.log("Time taken was " + time);
-  }
+    if(shotCount === 10){
+       clearInterval(timer);
+       console.log("Time taken was " + time);
+    }
+  } 
 
   if (shotCount == 1) {
     timer = setInterval(incrementTimer, 1000);
