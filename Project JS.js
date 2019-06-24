@@ -32,6 +32,10 @@ function storeNames() {
 
 }
 
+function finishShoot(){
+  
+}
+
 // This function hides the login page, and shows the target page
 function hideFunc() {
   var x = document.getElementById("loginPage");
