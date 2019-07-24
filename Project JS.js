@@ -1,18 +1,21 @@
 //document.getElementById("btnLogin").addEventListener("click", storeNames)
 
 // This function created the user object and stores this object in local storage
-function storeNames() {
+
+/*function storeNames() {
  
   // The user profile as an object
   var userEntered = {
     personFirstName: document.getElementById("firstName").value,
     personLastName: document.getElementById("lastName").value,
     personScores: []
-    
+
   };
 
   var userArray = [];
   userArray.push(userEntered);
+  userArray = localStorage.getItem("userArray")
+
   //console.log("array is " + userArray)
 
   //var userArrayTest = userArray[0];
@@ -31,8 +34,48 @@ function storeNames() {
   console.log("retrievedObject: ", JSON.parse(retrievedObject));
 
 }
+*/
+function createUser() {
+
+    userEntered = {
+    personFirstName: document.getElementById("firstName").value,
+    personLastName: document.getElementById("lastName").value,
+    personScores: []
+    
+  };
+
+  console.log("first is " + userEntered.personFirstName);
+  console.log("Last is " + userEntered.personLastName);
+  document.getElementById("targetUsernameOutput").innerHTML = userEntered.personFirstName + " " + userEntered.personLastName;
+
+  var previousObject = localStorage.getItem("userEntered");
+  console.log(JSON.parse(previousObject))
+
+  // Stores the user object in local storage
+  localStorage.setItem("userEntered", JSON.stringify(userEntered));
+  var retrievedObject = localStorage.getItem("userEntered");
+  console.log("retrievedObject: ", JSON.parse(retrievedObject));
+  
+}
+
 
 function finishShoot(){
+  console.log(totalScore)
+  userEntered.personScores = totalScore
+  console.log(userEntered);
+  userArray = JSON.parse(localStorage.getItem("userArray"));
+  if (userArray == null){
+    userArray = []
+  }
+  
+  userArray.push(JSON.stringify(userEntered));
+  // yo this broke af ^
+
+  console.log("BREAK TIME AAAAAAAAAAAAAAAAAAAAAAAAA")
+
+  localStorage.setItem("userArray", JSON.stringify(userArray));
+  var retrievedArray = localStorage.getItem("userArray");
+  console.log("retrievedArray: ", JSON.parse(retrievedArray));
   
 }
 
