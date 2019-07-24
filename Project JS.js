@@ -69,7 +69,6 @@ function finishShoot(){
   }
   
   userArray.push(JSON.stringify(userEntered));
-  // yo this broke af ^
 
   console.log("BREAK TIME AAAAAAAAAAAAAAAAAAAAAAAAA")
 
