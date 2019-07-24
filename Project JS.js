@@ -61,7 +61,7 @@ function createUser() {
 
 function finishShoot(){
   console.log(totalScore)
-  userEntered.personScores = totalScore
+  userEntered.personScores.push(totalScore)
   console.log(userEntered);
   userArray = JSON.parse(localStorage.getItem("userArray"));
   if (userArray == null){
@@ -75,6 +75,7 @@ function finishShoot(){
   localStorage.setItem("userArray", JSON.stringify(userArray));
   var retrievedArray = localStorage.getItem("userArray");
   console.log("retrievedArray: ", JSON.parse(retrievedArray));
+  location.reload()
   
 }
 
