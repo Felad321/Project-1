@@ -75,7 +75,13 @@ function finishShoot(){
   localStorage.setItem("userArray", JSON.stringify(userArray));
   var retrievedArray = localStorage.getItem("userArray");
   console.log("retrievedArray: ", JSON.parse(retrievedArray));
-  location.reload()
+
+  if (totalScore == 100){
+    window.alert("Congratulations, you scored a perfect shoot!")
+  }
+
+ // location.reload()
+ // PUT BACK IN LATER
   
 }
 
