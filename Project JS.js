@@ -1,40 +1,5 @@
 //document.getElementById("btnLogin").addEventListener("click", storeNames)
 
-// This function created the user object and stores this object in local storage
-
-/*function storeNames() {
- 
-  // The user profile as an object
-  var userEntered = {
-    personFirstName: document.getElementById("firstName").value,
-    personLastName: document.getElementById("lastName").value,
-    personScores: []
-
-  };
-
-  var userArray = [];
-  userArray.push(userEntered);
-  userArray = localStorage.getItem("userArray")
-
-  //console.log("array is " + userArray)
-
-  //var userArrayTest = userArray[0];
-  //console.log(userArrayTest)
-
-  console.log("first is " + userEntered.personFirstName);
-  console.log("Last is " + userEntered.personLastName);
-  document.getElementById("targetUsernameOutput").innerHTML = userEntered.personFirstName + " " + userEntered.personLastName;
-
-  var previousObject = localStorage.getItem("userEntered");
-  console.log(JSON.parse(previousObject))
-
-  // Stores the user object in local storage
-  localStorage.setItem("userEntered", JSON.stringify(userEntered));
-  var retrievedObject = localStorage.getItem("userEntered");
-  console.log("retrievedObject: ", JSON.parse(retrievedObject));
-
-}
-*/
 function createUser() {
 
     userEntered = {
@@ -68,13 +33,18 @@ function finishShoot(){
     userArray = []
   }
   
-  userArray.push(JSON.stringify(userEntered));
+  userArray.push(userEntered);
 
   console.log("BREAK TIME AAAAAAAAAAAAAAAAAAAAAAAAA")
 
   localStorage.setItem("userArray", JSON.stringify(userArray));
-  var retrievedArray = localStorage.getItem("userArray");
-  console.log("retrievedArray: ", JSON.parse(retrievedArray));
+  console.log(userArray)
+  var retrievedArray = localStorage.getItem(userArray);
+  console.log("retrievedArray: ", retrievedArray);
+  var retrievedUser = retrievedArray[2]
+  console.log(retrievedUser.personScores)
+  //console.log("retrieved array user: ", retrievedArray[2])
+  
 
   if (totalScore == 100){
     window.alert("Congratulations, you scored a perfect shoot!")
