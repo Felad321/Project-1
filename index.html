@@ -11,17 +11,14 @@
 <body class="body2">
 <div id="commonFeatures">
 
-<div>
-
+    <!-- Title of the program in web browser -->
     <link rel="stylesheet" type="css/text" href="CSS - Stylesheet.css">
         <div class="container-fluid" id="header" >
         <h1 class="display-1"> Rifle Shooting Scoring System </h1>
 </div>
 </div>
-
 <div id="loginPage">
         <!-- L O G I N   P A G E  -->
-
 
 <!--  Header of page  -->
 <div>
@@ -32,33 +29,37 @@
 <div class="container-fluid">
         <span class="border">  
         <br>
-        <p class="lead"> Enter filler content here! :)</p> 
+        <p class="lead"> Enter filler content here! :)</p> <!-- Fill in this -->
         </span>
 </div>
-<div>
 <br>
 <br>
-</div>
-
+    <!-- Each button (both login and create0 -->
     <div id="choiceElements">
+        <!-- Create button -->
         <button id="btnChoiceCreate" type="submit" class="loginButton" onclick="showCreate()">Create new user</button>
+        <!-- Login button -->
         <button id="btnChoiceLogin" type="submit" class="loginButton" onclick="showLogin(), selectUser()">Login to an existing user</button>
     </div>
 <br>
+    
     <div id="userCreateHTML" style="display: none">
-        <input id="firstName"> Enter your first name here 
+        <!-- Create choice elements -->
+        <input id="personName"> Enter your name here 
          <br>
-         <input id="lastName"> Enter your last name here
-        <br>
         <br>
          <button id="btnCreateUser" type="submit" class="loginButton" onclick="hideFunc(), createUser()">Submit</button>
     </div>
 
     <div id="userExistHTML" style="display: none">
-
+        <!-- Login choice elements -->
         <select id='ddown'>
             <option id = "selectUser" value="">Select your user</option>
         </select>
+        <br>
+        <br>
+        <p> Or </p>
+        <input type="text" id="inputNameSearch"> Enter your name.</input>
         <br>
         <br>
         <button id="btnLoginUser" type="submit" class="loginButton" onclick="hideFunc()">Submit</button>
@@ -79,10 +80,8 @@
 <div id="targetPage" style="display: none">
 
         <!-- T A R G E T   P A G E -->
-<!--    Header of page (Target version :D)  -->
-<div>
-    <body class="body2">
-    </div>
+<!--    Header of page (Target version)  -->
+
     <div class="container-fluid">
     <h3 class="text-muted"> Target Page </h3>
     </div>
@@ -94,8 +93,10 @@
     </div>
 
 
+
 <div class="rightElements">
-<!-- Scoring elements & other information will be here. Elements should be on right side of page (hopefully)-->
+<!-- Scoring elements & other information are below. These elements are on right side of page-->
+
 <svg width="400" height="100" >
     <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/>
     

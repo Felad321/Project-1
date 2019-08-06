@@ -1,22 +1,24 @@
 //document.getElementById("btnLogin").addEventListener("click", storeNames)
 // Global Variables below
 var flagCreateUser = false
+var searchFlag = false
+var retrievedArray = localStorage.getItem("userArray");
+var retrievedArrayProper = JSON.parse(retrievedArray);
+  console.log("testArray is: " + retrievedArrayProper);
+  console.log("retrievedArray: ", retrievedArray);
 
 function createUser() {
 
     userEntered = {
-    personFirstName: document.getElementById("firstName").value,
-    personLastName: document.getElementById("lastName").value,
+    personName: document.getElementById("personName").value,
     personScores: []
     
   };
 
-    console.log("first is " + userEntered.personFirstName);
-    console.log("Last is " + userEntered.personLastName);
-    document.getElementById("targetUsernameOutput").innerHTML = userEntered.personFirstName + " " + userEntered.personLastName;
-
-   var previousObject = localStorage.getItem("userEntered");
-    console.log(JSON.parse(previousObject))
+  //  console.log("first is " + userEntered.personFirstName);
+    document.getElementById("targetUsernameOutput").innerHTML = userEntered.personName;
+    var previousObject = localStorage.getItem("userEntered");
+  //  console.log(JSON.parse(previousObject))
 
     // Stores the user object in local storage
     localStorage.setItem("userEntered", JSON.stringify(userEntered));
@@ -36,7 +38,7 @@ function selectUser() {
   
   var option = document.createElement("option");
     option.value = i
-    option.text = retrievedArraySelectProper[i].personFirstName
+    option.text = retrievedArraySelectProper[i].personName
     selectbox.add(option)
 
   }
@@ -45,10 +47,12 @@ function selectUser() {
 
 }
 
-/*
+/* Bubble Sort and Binary Search used under permission by Krishen T.
+Retrieved from: https://github.com/128234/New-SDD-Prelim-Site/blob/master/script.js
+*/
 function bubbleSort() {
   //The following lines display the insertion sort algorithm which sorts the array
-  tempArray = allClassesArray;
+  tempArray = retrievedArrayProper;
   first = 0;
   last = tempArray.length - 1;
   positionOfNext = last - 1;
@@ -66,19 +70,22 @@ function bubbleSort() {
     tempArray[current] = next;
     positionOfNext -= 1;
   }
-  allClassesArray = tempArray;
+  retrievedArrayProper = tempArray;
   return;
 }
 
+
+
 function binarySearch() {
   //Will jump out if the array is already empty
-if(allClassesArray.length == 0) {
+if(retrievedArrayProper.length == 0) {
   return false;
 }
+  searchFlag = true
   lower = 0;
-  upper = allClassesArray.length - 1;
+  upper = retrievedArrayProper.length - 1;
   foundIt = false;
-  requiredName = findClassNameInput.value;
+  requiredName = inputNameSearch.value; // CHANGE
 
   //This will iterate through the array until it has found the value it is looking for
   do {
@@ -86,12 +93,12 @@ if(allClassesArray.length == 0) {
 
     //If the value is not located in the middle, it will split the remaining array into 2 halves and will repeat the same process
     if (
-      requiredName.toLowerCase() == allClassesArray[middle].name.toLowerCase()
+      requiredName.toLowerCase() == retrievedArrayProper[middle].personName.toLowerCase()
     ) {
       foundIt = true;
       positionFound = middle + 1;
     } else if (
-      requiredName.toLowerCase() < allClassesArray[middle].name.toLowerCase()
+      requiredName.toLowerCase() < retrievedArrayProper[middle].personName.toLowerCase()
     ) {
       upper = middle - 1;
     } else {
@@ -107,7 +114,6 @@ if(allClassesArray.length == 0) {
   }
 }
 
-*/
 
 
 function finishShoot(){
@@ -134,10 +140,10 @@ function finishShoot(){
     var addScore = document.getElementById("ddown").value
     console.log(addScore);
 
-    var retrievedArray = localStorage.getItem("userArray");
+/*    var retrievedArray = localStorage.getItem("userArray");
     var retrievedArrayProper = JSON.parse(retrievedArray);
       console.log("testArray is: " + retrievedArrayProper);
-      console.log("retrievedArray: ", retrievedArray);
+      console.log("retrievedArray: ", retrievedArray); */
     var retrievedUser = retrievedArrayProper[addScore]
       console.log(retrievedUser);
       retrievedUser.personScores.push(totalScore)
