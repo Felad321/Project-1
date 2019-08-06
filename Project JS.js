@@ -1,84 +1,168 @@
 //document.getElementById("btnLogin").addEventListener("click", storeNames)
+// Global Variables below
+var flagCreateUser = false
+var searchFlag = false
+var retrievedArray = localStorage.getItem("userArray");
+var retrievedArrayProper = JSON.parse(retrievedArray);
+  console.log("testArray is: " + retrievedArrayProper);
+  console.log("retrievedArray: ", retrievedArray);
 
-// This function created the user object and stores this object in local storage
-
-/*function storeNames() {
- 
-  // The user profile as an object
-  var userEntered = {
-    personFirstName: document.getElementById("firstName").value,
-    personLastName: document.getElementById("lastName").value,
-    personScores: []
-
-  };
-
-  var userArray = [];
-  userArray.push(userEntered);
-  userArray = localStorage.getItem("userArray")
-
-  //console.log("array is " + userArray)
-
-  //var userArrayTest = userArray[0];
-  //console.log(userArrayTest)
-
-  console.log("first is " + userEntered.personFirstName);
-  console.log("Last is " + userEntered.personLastName);
-  document.getElementById("targetUsernameOutput").innerHTML = userEntered.personFirstName + " " + userEntered.personLastName;
-
-  var previousObject = localStorage.getItem("userEntered");
-  console.log(JSON.parse(previousObject))
-
-  // Stores the user object in local storage
-  localStorage.setItem("userEntered", JSON.stringify(userEntered));
-  var retrievedObject = localStorage.getItem("userEntered");
-  console.log("retrievedObject: ", JSON.parse(retrievedObject));
-
-}
-*/
 function createUser() {
 
     userEntered = {
-    personFirstName: document.getElementById("firstName").value,
-    personLastName: document.getElementById("lastName").value,
+    personName: document.getElementById("personName").value,
     personScores: []
     
   };
 
-  console.log("first is " + userEntered.personFirstName);
-  console.log("Last is " + userEntered.personLastName);
-  document.getElementById("targetUsernameOutput").innerHTML = userEntered.personFirstName + " " + userEntered.personLastName;
+  //  console.log("first is " + userEntered.personFirstName);
+    document.getElementById("targetUsernameOutput").innerHTML = userEntered.personName;
+    var previousObject = localStorage.getItem("userEntered");
+  //  console.log(JSON.parse(previousObject))
 
-  var previousObject = localStorage.getItem("userEntered");
-  console.log(JSON.parse(previousObject))
+    // Stores the user object in local storage
+    localStorage.setItem("userEntered", JSON.stringify(userEntered));
+    var retrievedObject = localStorage.getItem("userEntered");
+   console.log("retrievedObject: ", JSON.parse(retrievedObject));
 
-  // Stores the user object in local storage
-  localStorage.setItem("userEntered", JSON.stringify(userEntered));
-  var retrievedObject = localStorage.getItem("userEntered");
-  console.log("retrievedObject: ", JSON.parse(retrievedObject));
+    flagCreateUser = true
+  
   
 }
+
+function selectUser() {
+  selectbox = document.getElementById("ddown")
+  var retrievedArraySelect = localStorage.getItem("userArray")
+  var retrievedArraySelectProper = JSON.parse(retrievedArraySelect)
+  for(i=0;i<retrievedArraySelectProper.length;i++){
+  
+  var option = document.createElement("option");
+    option.value = i
+    option.text = retrievedArraySelectProper[i].personName
+    selectbox.add(option)
+
+  }
+
+  flagCreateUser = false
+
+}
+
+/* Bubble Sort and Binary Search used under permission by Krishen T.
+Retrieved from: https://github.com/128234/New-SDD-Prelim-Site/blob/master/script.js
+*/
+function bubbleSort() {
+  //The following lines display the insertion sort algorithm which sorts the array
+  tempArray = retrievedArrayProper;
+  first = 0;
+  last = tempArray.length - 1;
+  positionOfNext = last - 1;
+
+  while (positionOfNext >= first) {
+    next = tempArray[positionOfNext];
+    current = positionOfNext;
+    while (
+      current < last &&
+      next.name.toLowerCase() > tempArray[current + 1].name.toLowerCase()
+    ) {
+      current++;
+      tempArray[current - 1] = tempArray[current];
+    }
+    tempArray[current] = next;
+    positionOfNext -= 1;
+  }
+  retrievedArrayProper = tempArray;
+  return;
+}
+
+
+
+function binarySearch() {
+  //Will jump out if the array is already empty
+if(retrievedArrayProper.length == 0) {
+  return false;
+}
+  searchFlag = true
+  lower = 0;
+  upper = retrievedArrayProper.length - 1;
+  foundIt = false;
+  requiredName = inputNameSearch.value; // CHANGE
+
+  //This will iterate through the array until it has found the value it is looking for
+  do {
+    middle = Math.floor((upper + lower) / 2);
+
+    //If the value is not located in the middle, it will split the remaining array into 2 halves and will repeat the same process
+    if (
+      requiredName.toLowerCase() == retrievedArrayProper[middle].personName.toLowerCase()
+    ) {
+      foundIt = true;
+      positionFound = middle + 1;
+    } else if (
+      requiredName.toLowerCase() < retrievedArrayProper[middle].personName.toLowerCase()
+    ) {
+      upper = middle - 1;
+    } else {
+      lower = middle + 1;
+    }
+  } while (!foundIt && lower <= upper);
+
+  //This will display its position back to the user
+  if (foundIt) {
+    return positionFound - 1;
+  } else {
+    return false;
+  }
+}
+
 
 
 function finishShoot(){
   console.log(totalScore)
-  userEntered.personScores.push(totalScore)
-  console.log(userEntered);
+  // Retrieves the stored array
   userArray = JSON.parse(localStorage.getItem("userArray"));
+
+  if(flagCreateUser == true){
+    userEntered.personScores.push(totalScore)
+    console.log(userEntered);
+  
+    
   if (userArray == null){
     userArray = []
   }
   
-  userArray.push(JSON.stringify(userEntered));
+  userArray.push(userEntered);
+  localStorage.setItem("userArray", JSON.stringify(userArray));
+  console.log(userArray)
 
+  } else {
+    console.log("it works!!!!111!!!")
+
+    var addScore = document.getElementById("ddown").value
+    console.log(addScore);
+
+/*    var retrievedArray = localStorage.getItem("userArray");
+    var retrievedArrayProper = JSON.parse(retrievedArray);
+      console.log("testArray is: " + retrievedArrayProper);
+      console.log("retrievedArray: ", retrievedArray); */
+    var retrievedUser = retrievedArrayProper[addScore]
+      console.log(retrievedUser);
+      retrievedUser.personScores.push(totalScore)
+      console.log(retrievedUser.personScores)
+    //console.log("retrieved array user: ", retrievedArray[2])
+
+  }
+  
   console.log("BREAK TIME AAAAAAAAAAAAAAAAAAAAAAAAA")
 
-  localStorage.setItem("userArray", JSON.stringify(userArray));
-  var retrievedArray = localStorage.getItem("userArray");
-  console.log("retrievedArray: ", JSON.parse(retrievedArray));
+
 
   if (totalScore == 100){
     window.alert("Congratulations, you scored a perfect shoot!")
   }
+
+  //var addScore = document.getElementById("ddown").value
+  //console.log(addScore);
+
 
  // location.reload()
  // PUT BACK IN LATER
