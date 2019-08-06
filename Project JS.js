@@ -1,7 +1,7 @@
 //document.getElementById("btnLogin").addEventListener("click", storeNames)
 // Global Variables below
 var flagCreateUser = false
-var searchFlag = false
+var flagSearch = false
 var retrievedArray = localStorage.getItem("userArray");
 var retrievedArrayProper = JSON.parse(retrievedArray);
   console.log("testArray is: " + retrievedArrayProper);
@@ -47,6 +47,20 @@ function selectUser() {
 
 }
 
+function searchUser() {
+  bubbleSort();
+  userIndex = binarySearch();
+  flagSearch = true
+  console.log(userIndex)
+
+  if(userIndex === false){
+    window.alert("That is not a valid user. Please try again.")
+  } else {
+  
+  }
+}
+
+
 /* Bubble Sort and Binary Search used under permission by Krishen T.
 Retrieved from: https://github.com/128234/New-SDD-Prelim-Site/blob/master/script.js
 */
@@ -62,7 +76,7 @@ function bubbleSort() {
     current = positionOfNext;
     while (
       current < last &&
-      next.name.toLowerCase() > tempArray[current + 1].name.toLowerCase()
+      next.personName.toLowerCase() > tempArray[current + 1].personName.toLowerCase()
     ) {
       current++;
       tempArray[current - 1] = tempArray[current];
@@ -134,7 +148,14 @@ function finishShoot(){
   localStorage.setItem("userArray", JSON.stringify(userArray));
   console.log(userArray)
 
-  } else {
+  } else if(flagSearch == true){
+    var retrievedUser = retrievedArrayProper[userIndex];
+        console.log(retrievedUser)
+        retrievedUser.personScores.push(totalScore);
+        console.log(retrievedUser.personScores)
+
+    } else{
+          
     console.log("it works!!!!111!!!")
 
     var addScore = document.getElementById("ddown").value
@@ -149,8 +170,18 @@ function finishShoot(){
       retrievedUser.personScores.push(totalScore)
       console.log(retrievedUser.personScores)
     //console.log("retrieved array user: ", retrievedArray[2])
+    }
+    retrievedArrayProper.splice(addScore,1)
+    console.log("post delete: " + JSON.stringify(retrievedArrayProper))
+    retrievedArrayProper.splice(addScore,0,retrievedUser)
+    console.log("post add: " + JSON.stringify(retrievedArrayProper))
 
-  }
+    
+    console.log(retrievedArrayProper)
+    localStorage.setItem("userArray", JSON.stringify(retrievedArrayProper));
+    
+
+  
   
   console.log("BREAK TIME AAAAAAAAAAAAAAAAAAAAAAAAA")
 
@@ -169,49 +200,82 @@ function finishShoot(){
   
 }
 
-// This function hides the login page, and shows the target page
+/* This function hides the login page, and shows the target page
+   Temporary variables are used to achieve this
+*/
 function hideFunc() {
-  var x = document.getElementById("loginPage");
-  var y = document.getElementById("targetPage");
+  var login = document.getElementById("loginPage");
+  var target = document.getElementById("targetPage");
   
 
-  if (x.style.display === "none") {
-    x.style.display = "block";
+  if (login.style.display === "none") {
+    login.style.display = "block";
   } else {
-    x.style.display = "none";
-    y.style.display = "block";
+    login.style.display = "none";
+    target.style.display = "block";
     
   }
 }
 
 function showCreate() {
-  var x = document.getElementById("userCreateHTML");
-  var y = document.getElementById("loginPage");
-  var z = document.getElementById("userExistHTML");
+  var create = document.getElementById("userCreateHTML");
+  var login = document.getElementById("loginPage");
+  var exist = document.getElementById("userExistHTML");
+  var search = document.getElementById("userSearchHTML");
 
-  z.style.display = "none";
 
-  if (x.style.display === "none") {
-    x.style.display = "block";
+  exist.style.display = "none";
+
+  if (create.style.display === "none") {
+    create.style.display = "block";
+    search.style.display = "none";
+    exist.style.display = "none";
   } else {
-    x.style.display = "none";
-    y.style.display = "block";
+    create.style.display = "none";
+    login.style.display = "block";
+    search.style.display = "none";
   
   }
 }
 
 function showLogin() {
-  var x = document.getElementById("userExistHTML");
-  var y = document.getElementById("loginPage");
-  var z = document.getElementById("userCreateHTML");
+  var exist = document.getElementById("userExistHTML");
+  var login = document.getElementById("loginPage");
+  var create = document.getElementById("userCreateHTML");
+  var search = document.getElementById("userSearchHTML");
 
-z.style.display = "none";
 
-  if (x.style.display === "none") {
-    x.style.display = "block";
+  create.style.display = "none";
+
+  if (exist.style.display === "none") {
+    exist.style.display = "block";
+    search.style.display = "none";
+    create.style.display = "none";
   } else {
-    x.style.display = "none";
-    y.style.display = "block";
+    exist.style.display = "none";
+    login.style.display = "block";
+    search.style.display = "none";
+    
+  }
+}
+
+function showSearch() {
+  var search = document.getElementById("userSearchHTML");
+  var login = document.getElementById("loginPage");
+  var create = document.getElementById("userCreateHTML");
+  var exist = document.getElementById("userExistHTML");
+
+  create.style.display = "none";
+  exist.style.display = "none";
+
+  if (search.style.display === "none") {
+    search.style.display = "block";
+    exist.style.diplay = "none";
+    create.style.display = "none";
+  } else {
+    search.style.display = "none";
+    login.style.display = "block";
+    exist.style.diplay = "none";
     
   }
 }

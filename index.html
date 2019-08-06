@@ -34,15 +34,28 @@
 </div>
 <br>
 <br>
+
+<div class="rightElements"> 
+        <svg width="400" height="100" >
+                <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
+                
+                <text x="0" y="15" fill="black" id="scoreboard">scoreboard</text>
+            </svg>
+        </div>
     <!-- Each button (both login and create0 -->
+   
+    <div class="container-fluid">
     <div id="choiceElements">
         <!-- Create button -->
         <button id="btnChoiceCreate" type="submit" class="loginButton" onclick="showCreate()">Create new user</button>
+        <br>
         <!-- Login button -->
         <button id="btnChoiceLogin" type="submit" class="loginButton" onclick="showLogin(), selectUser()">Login to an existing user</button>
+        <br>
+        <!-- Search button -->
+        <button id="btnChoiceSearch" type="submit" class="loginButton" onclick="showSearch()">Provide the name of an existing user</button>
     </div>
 <br>
-    
     <div id="userCreateHTML" style="display: none">
         <!-- Create choice elements -->
         <input id="personName"> Enter your name here 
@@ -57,26 +70,23 @@
             <option id = "selectUser" value="">Select your user</option>
         </select>
         <br>
-        <br>
-        <p> Or </p>
-        <input type="text" id="inputNameSearch"> Enter your name.</input>
-        <br>
-        <br>
         <button id="btnLoginUser" type="submit" class="loginButton" onclick="hideFunc()">Submit</button>
     </div>
 
-    <svg width="400" height="100" >
-            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-            
-            <text x="0" y="15" fill="red" id="scoreboard">scoreboard</text>
-        </svg>
+    <div id="userSearchHTML" style="display: none">
 
+        <input type="text" id="inputNameSearch"> Enter your name</input>
+        <br>
+        <button id="btnSearchUser" type="submit" class="loginButton" onclick="searchUser(), hideFunc()">Submit</button>
+    </div>
+
+    
 </div>
 
 <script type="text/javascript" src="Project JS.js"></script>
 
 </div>
-
+</div>
 <div id="targetPage" style="display: none">
 
         <!-- T A R G E T   P A G E -->
