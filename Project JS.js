@@ -1,11 +1,25 @@
 
 // Global Variables below
-var flagCreateUser = false
-var flagSearch = false
-var retrievedArray = localStorage.getItem("userArray");
-var retrievedArrayProper = JSON.parse(retrievedArray);
+  var flagCreateUser = false
+  var flagSearch = false
+  var retrievedArray = localStorage.getItem("userArray");
+  var retrievedArrayProper = JSON.parse(retrievedArray);
   console.log("testArray is: " + retrievedArrayProper);
   console.log("retrievedArray: ", retrievedArray);
+  // Below are the scoring functions, which are called whenever one of the target buttons are clicked
+  var totalScore = 0;
+  var scoreOutput = 0;
+  var stopwatch;
+  var shotCount = 0
+  var time = 0;
+  var timer = null;
+// End of Global Variables
+
+// Timer function that records the total time taken for the shoot
+function incrementTimer () {
+  time += 1;
+document.getElementById("targetShootDataOutput").innerHTML = "Time is " + time + " seconds!";
+}
 
 function createUser() {
 
@@ -34,17 +48,24 @@ function selectUser() {
   selectbox = document.getElementById("ddown")
   var retrievedArraySelect = localStorage.getItem("userArray")
   var retrievedArraySelectProper = JSON.parse(retrievedArraySelect)
-  for(i=0;i<retrievedArraySelectProper.length;i++){
-  
-  var option = document.createElement("option");
-    option.value = i
-    option.text = retrievedArraySelectProper[i].personName
-    selectbox.add(option)
 
-  }
+   for(i=0;i<retrievedArraySelectProper.length;i++){
+  
+      var option = document.createElement("option");
+      option.value = i
+      option.text = retrievedArraySelectProper[i].personName
+      selectbox.add(option)
+
+   }
 
   flagCreateUser = false
 
+}
+
+function selectUserName() {
+  var usernameIndex = document.getElementById("ddown").value;
+  console.log(usernameIndex);
+  document.getElementById("targetUsernameOutput").innerHTML = retrievedArrayProper[usernameIndex].personName;
 }
 
 function searchUser() {
@@ -58,12 +79,14 @@ function searchUser() {
   } else {
     hideFunc()
   }
+  document.getElementById("targetUsernameOutput").innerHTML = retrievedArrayProper[userIndex].personName;
 }
 
 
 /* Insertion Sort and Binary Search used and modified under permission by Krishen T.
 Retrieved from: https://github.com/128234/New-SDD-Prelim-Site/blob/master/script.js
 */
+
 function insertionSort() {
   //The following lines display the insertion sort algorithm which sorts the array
   tempArray = retrievedArrayProper;
@@ -211,8 +234,7 @@ function finishShoot(){
 }
 
 /* This function hides the login page, and shows the target page
-   Temporary variables are used to achieve this
-*/
+   Temporary variables are used to achieve this */
 function hideFunc() {
   var login = document.getElementById("loginPage");
   var target = document.getElementById("targetPage");
@@ -290,18 +312,7 @@ function showSearch() {
   }
 }
 
-// Below are the scoring functions, which are called whenever one of the target buttons are clicked
-var totalScore = 0;
-var scoreOutput = 0;
-var stopwatch;
-var shotCount = 0
 
-var time = 0;
-var timer = null;
-function incrementTimer () {
-  time += 1;
-document.getElementById("targetShootDataOutput").innerHTML = "Time is " + time + " seconds!";
-}
 
 // Shot limit function
 function shotLimit (amount){

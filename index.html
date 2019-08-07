@@ -65,7 +65,7 @@
         <!-- Create choice elements -->
         <input id="personName"> Enter your name here 
          <br>
-        <br>
+         <br>
          <button id="btnCreateUser" type="submit" class="loginButton" onclick="hideFunc(), createUser()">Submit</button>
     </div>
 
@@ -76,7 +76,7 @@
         </select>
         <br>
         <br>
-        <button id="btnLoginUser" type="submit" class="loginButton" onclick="hideFunc()">Submit</button>
+        <button id="btnLoginUser" type="submit" class="loginButton" onclick="hideFunc(), selectUserName()">Submit</button>
     </div>
 
     <div id="userSearchHTML" style="display: none">
@@ -99,42 +99,42 @@
         <!-- T A R G E T   P A G E -->
 <!--    Header of page (Target version)  -->
 
-<div class="rightElements">
+    <div class="rightElements">
         <!-- Scoring elements & other information are below. These elements are on right side of page-->
-        
         <svg width="400" height="100" >
-            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/>
+            <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5"/>
             
-            <text x="0" y="15" fill="red" id="targetUsernameOutput">Shooter Name</text>
+            <text x="15" y="25" fill="black" id="targetUsernameOutput">Shooter Name</text>
         </svg>
         <br>
         <svg width="400" height="100" >
-            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
             
-            <text x="0" y="15" fill="red" id="targetScoreOutput">Your Score</text>
+            <text x="15" y="25" fill="black" id="targetScoreOutput">Your Score</text>
         </svg>
         <br>
         <svg width="400" height="100" >
-            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
             
-            <text x="0" y="15" fill="red" id="targetShootDataOutput">Timer</text>
+            <text x="15" y="25" fill="black" id="targetShootDataOutput">Timer</text>
         </svg>
         <br>
         <svg width="400" height="100" >
-            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
             
-            <text x="0" y="15" fill="red" id="targetCountOutput">Shot Count</text>
+            <text x="15" y="25" fill="black" id="targetCountOutput">Shot Count</text>
         </svg>
-        </div>
+    </div>
 
     <div class="container-fluid">
-    <h3 class="text-muted"> Target Page </h3>
+        <h3 class="text-muted"> Target Page </h3>
     </div>
+
     <div class="container-fluid">
-    <span class="border">  
-        <br>
-        <p class="lead"> Enter filler content here! :)</p> 
-    </span>
+        <span class="border">  
+         <br>
+         <p class="lead"> Enter filler content here! :)</p> 
+        </span>
     </div>
 
 
@@ -144,15 +144,16 @@
 
 
 <div>
- <!-- Below are all of the target buttons used for the shooting target -->
-<button type="button" class="button0Circle" id="targetTen" onclick="scoreTen(scoreOutput)"> ok </button>
-<button type="button" class="button1Circle" id="targetNine" onclick="scoreNine(scoreOutput)"> ok </button>
-<button type="button" class="button2Circle" id="targetEight" onclick="scoreEight(scoreOutput)"> ok </button>
-<button type="button" class="button3Circle" id="targetSeven" onclick="scoreSeven(scoreOutput)"> </button>
-<button type="button" class="button4Circle" id="targetSix" onclick="scoreSix(scoreOutput)"> ok </button>
-<button type="button" class="button5Circle" id="targetFive" onclick="scoreFive(scoreOutput)"> ok </button>  
+     <!-- Below are all of the target buttons used for the shooting target -->
+    <button type="button" class="button0Circle" id="targetTen" onclick="scoreTen(scoreOutput)"> ok </button>
+    <button type="button" class="button1Circle" id="targetNine" onclick="scoreNine(scoreOutput)"> ok </button>
+    <button type="button" class="button2Circle" id="targetEight" onclick="scoreEight(scoreOutput)"> ok </button>
+    <button type="button" class="button3Circle" id="targetSeven" onclick="scoreSeven(scoreOutput)"> </button>
+    <button type="button" class="button4Circle" id="targetSix" onclick="scoreSix(scoreOutput)"> ok </button>
+    <button type="button" class="button5Circle" id="targetFive" onclick="scoreFive(scoreOutput)"> ok </button>  
 </div> 
 
+<div>
 <!-- Seperates the Finish Shoot button to below the target-->
 <br>
 <br>
@@ -170,6 +171,7 @@
 <br>
 <br>
 <button id="btnFinishShoot" type="submit" class="loginButton" onclick="finishShoot()">Finish Shoot</button>
+</div>
 </div>
 
 
