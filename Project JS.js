@@ -1,4 +1,4 @@
-//document.getElementById("btnLogin").addEventListener("click", storeNames)
+
 // Global Variables below
 var flagCreateUser = false
 var flagSearch = false
@@ -48,7 +48,7 @@ function selectUser() {
 }
 
 function searchUser() {
-  bubbleSort();
+  insertionSort();
   userIndex = binarySearch();
   flagSearch = true
   console.log(userIndex)
@@ -56,15 +56,15 @@ function searchUser() {
   if(userIndex === false){
     window.alert("That is not a valid user. Please try again.")
   } else {
-  
+    hideFunc()
   }
 }
 
 
-/* Bubble Sort and Binary Search used under permission by Krishen T.
+/* Insertion Sort and Binary Search used and modified under permission by Krishen T.
 Retrieved from: https://github.com/128234/New-SDD-Prelim-Site/blob/master/script.js
 */
-function bubbleSort() {
+function insertionSort() {
   //The following lines display the insertion sort algorithm which sorts the array
   tempArray = retrievedArrayProper;
   first = 0;
@@ -154,6 +154,16 @@ function finishShoot(){
         retrievedUser.personScores.push(totalScore);
         console.log(retrievedUser.personScores)
 
+        retrievedArrayProper.splice(userIndex,1)
+        console.log("SEARCH post delete: " + JSON.stringify(retrievedArrayProper))
+        retrievedArrayProper.splice(userIndex,0,retrievedUser)
+        console.log("SEARCH post add: " + JSON.stringify(retrievedArrayProper))
+    
+        
+        console.log(retrievedArrayProper)
+        localStorage.setItem("userArray", JSON.stringify(retrievedArrayProper));
+        
+
     } else{
           
     console.log("it works!!!!111!!!")
@@ -170,17 +180,17 @@ function finishShoot(){
       retrievedUser.personScores.push(totalScore)
       console.log(retrievedUser.personScores)
     //console.log("retrieved array user: ", retrievedArray[2])
-    }
+
     retrievedArrayProper.splice(addScore,1)
-    console.log("post delete: " + JSON.stringify(retrievedArrayProper))
+    console.log("SELECT post delete: " + JSON.stringify(retrievedArrayProper))
     retrievedArrayProper.splice(addScore,0,retrievedUser)
-    console.log("post add: " + JSON.stringify(retrievedArrayProper))
+    console.log("SELECT post add: " + JSON.stringify(retrievedArrayProper))
 
     
     console.log(retrievedArrayProper)
     localStorage.setItem("userArray", JSON.stringify(retrievedArrayProper));
     
-
+    }
   
   
   console.log("BREAK TIME AAAAAAAAAAAAAAAAAAAAAAAAA")

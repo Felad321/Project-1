@@ -23,6 +23,15 @@
 <!--  Header of page  -->
 <div>
 <div class="container-fluid">
+
+        <div class="rightElements">
+                <svg width="400" height="500">
+                    <rect width="400" height="500" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+                    <text x="15" y="25" fill="black" id="scoreboard" >Scoreboard</text>
+                </svg>
+            </div>
+
         <h3 class="text-muted"> Login Page </h3>
 </div>
 </div> 
@@ -31,17 +40,13 @@
         <br>
         <p class="lead"> Enter filler content here! :)</p> <!-- Fill in this -->
         </span>
+
+      
 </div>
 <br>
 <br>
 
-<div class="rightElements"> 
-        <svg width="400" height="100" >
-                <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
-                
-                <text x="0" y="15" fill="black" id="scoreboard">scoreboard</text>
-            </svg>
-        </div>
+
     <!-- Each button (both login and create0 -->
    
     <div class="container-fluid">
@@ -70,6 +75,7 @@
             <option id = "selectUser" value="">Select your user</option>
         </select>
         <br>
+        <br>
         <button id="btnLoginUser" type="submit" class="loginButton" onclick="hideFunc()">Submit</button>
     </div>
 
@@ -77,7 +83,8 @@
 
         <input type="text" id="inputNameSearch"> Enter your name</input>
         <br>
-        <button id="btnSearchUser" type="submit" class="loginButton" onclick="searchUser(), hideFunc()">Submit</button>
+        <br>
+        <button id="btnSearchUser" type="submit" class="loginButton" onclick="searchUser()">Submit</button>
     </div>
 
     
@@ -92,6 +99,34 @@
         <!-- T A R G E T   P A G E -->
 <!--    Header of page (Target version)  -->
 
+<div class="rightElements">
+        <!-- Scoring elements & other information are below. These elements are on right side of page-->
+        
+        <svg width="400" height="100" >
+            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/>
+            
+            <text x="0" y="15" fill="red" id="targetUsernameOutput">Shooter Name</text>
+        </svg>
+        <br>
+        <svg width="400" height="100" >
+            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            
+            <text x="0" y="15" fill="red" id="targetScoreOutput">Your Score</text>
+        </svg>
+        <br>
+        <svg width="400" height="100" >
+            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            
+            <text x="0" y="15" fill="red" id="targetShootDataOutput">Timer</text>
+        </svg>
+        <br>
+        <svg width="400" height="100" >
+            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            
+            <text x="0" y="15" fill="red" id="targetCountOutput">Shot Count</text>
+        </svg>
+        </div>
+
     <div class="container-fluid">
     <h3 class="text-muted"> Target Page </h3>
     </div>
@@ -104,33 +139,7 @@
 
 
 
-<div class="rightElements">
-<!-- Scoring elements & other information are below. These elements are on right side of page-->
 
-<svg width="400" height="100" >
-    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/>
-    
-    <text x="0" y="15" fill="red" id="targetUsernameOutput">Shooter Name</text>
-</svg>
-<br>
-<svg width="400" height="100" >
-    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-    
-    <text x="0" y="15" fill="red" id="targetScoreOutput">Your Score</text>
-</svg>
-<br>
-<svg width="400" height="100" >
-    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-    
-    <text x="0" y="15" fill="red" id="targetShootDataOutput">Timer</text>
-</svg>
-<br>
-<svg width="400" height="100" >
-    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-    
-    <text x="0" y="15" fill="red" id="targetCountOutput">Shot Count</text>
-</svg>
-</div>
 
 
 
