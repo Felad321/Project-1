@@ -28,6 +28,15 @@
 <!--  Header of page  -->
 <div>
 <div class="container-fluid">
+
+        <div class="rightElements">
+                <svg width="400" height="500">
+                    <rect width="400" height="500" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+                    <text x="15" y="25" fill="black" id="scoreboard" >Scoreboard</text>
+                </svg>
+            </div>
+
         <h3 class="text-muted"> Login Page </h3>
 </div>
 </div> 
@@ -36,23 +45,32 @@
         <br>
         <p class="lead"> Enter filler content here! :)</p> <!-- Fill in this -->
         </span>
+
+      
 </div>
 <br>
 <br>
+
+
     <!-- Each button (both login and create0 -->
+   
+    <div class="container-fluid">
     <div id="choiceElements">
         <!-- Create button -->
         <button id="btnChoiceCreate" type="submit" class="loginButton" onclick="showCreate()">Create new user</button>
+        <br>
         <!-- Login button -->
         <button id="btnChoiceLogin" type="submit" class="loginButton" onclick="showLogin(), selectUser()">Login to an existing user</button>
+        <br>
+        <!-- Search button -->
+        <button id="btnChoiceSearch" type="submit" class="loginButton" onclick="showSearch()">Provide the name of an existing user</button>
     </div>
 <br>
-    
     <div id="userCreateHTML" style="display: none">
         <!-- Create choice elements -->
         <input id="personName"> Enter your name here 
          <br>
-        <br>
+         <br>
          <button id="btnCreateUser" type="submit" class="loginButton" onclick="hideFunc(), createUser()">Submit</button>
     </div>
 
@@ -63,82 +81,84 @@
         </select>
         <br>
         <br>
-        <p> Or </p>
-        <input type="text" id="inputNameSearch"> Enter your name.</input>
-        <br>
-        <br>
-        <button id="btnLoginUser" type="submit" class="loginButton" onclick="hideFunc()">Submit</button>
+        <button id="btnLoginUser" type="submit" class="loginButton" onclick="hideFunc(), selectUserName()">Submit</button>
     </div>
 
-    <svg width="400" height="100" >
-            <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-            
-            <text x="0" y="15" fill="red" id="scoreboard">scoreboard</text>
-        </svg>
+    <div id="userSearchHTML" style="display: none">
 
+        <input type="text" id="inputNameSearch"> Enter your name</input>
+        <br>
+        <br>
+        <button id="btnSearchUser" type="submit" class="loginButton" onclick="searchUser()">Submit</button>
+    </div>
+
+    
 </div>
 
 <script type="text/javascript" src="Project JS.js"></script>
 
 </div>
-
+</div>
 <div id="targetPage" style="display: none">
 
         <!-- T A R G E T   P A G E -->
 <!--    Header of page (Target version)  -->
 
-    <div class="container-fluid">
-    <h3 class="text-muted"> Target Page </h3>
-    </div>
-    <div class="container-fluid">
-    <span class="border">  
+    <div class="rightElements">
+        <!-- Scoring elements & other information are below. These elements are on right side of page-->
+        <svg width="400" height="100" >
+            <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5"/>
+            
+            <text x="15" y="25" fill="black" id="targetUsernameOutput">Shooter Name</text>
+        </svg>
         <br>
-        <p class="lead"> Enter filler content here! :)</p> 
-    </span>
+        <svg width="400" height="100" >
+            <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
+            
+            <text x="15" y="25" fill="black" id="targetScoreOutput">Your Score</text>
+        </svg>
+        <br>
+        <svg width="400" height="100" >
+            <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
+            
+            <text x="15" y="25" fill="black" id="targetShootDataOutput">Timer</text>
+        </svg>
+        <br>
+        <svg width="400" height="100" >
+            <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
+            
+            <text x="15" y="25" fill="black" id="targetCountOutput">Shot Count</text>
+        </svg>
+    </div>
+
+    <div class="container-fluid">
+        <h3 class="text-muted"> Target Page </h3>
+    </div>
+
+    <div class="container-fluid">
+        <span class="border">  
+         <br>
+         <p class="lead"> Enter filler content here! :)</p> 
+        </span>
     </div>
 
 
 
-<div class="rightElements">
-<!-- Scoring elements & other information are below. These elements are on right side of page-->
 
-<svg width="400" height="100" >
-    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5"/>
-    
-    <text x="0" y="15" fill="red" id="targetUsernameOutput">Shooter Name</text>
-</svg>
-<br>
-<svg width="400" height="100" >
-    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-    
-    <text x="0" y="15" fill="red" id="targetScoreOutput">Your Score</text>
-</svg>
-<br>
-<svg width="400" height="100" >
-    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-    
-    <text x="0" y="15" fill="red" id="targetShootDataOutput">Timer</text>
-</svg>
-<br>
-<svg width="400" height="100" >
-    <rect width="400" height="100" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
-    
-    <text x="0" y="15" fill="red" id="targetCountOutput">Shot Count</text>
-</svg>
-</div>
 
 
 
 <div>
- <!-- Below are all of the target buttons used for the shooting target -->
-<button type="button" class="button0Circle" id="targetTen" onclick="scoreTen(scoreOutput)"> ok </button>
-<button type="button" class="button1Circle" id="targetNine" onclick="scoreNine(scoreOutput)"> ok </button>
-<button type="button" class="button2Circle" id="targetEight" onclick="scoreEight(scoreOutput)"> ok </button>
-<button type="button" class="button3Circle" id="targetSeven" onclick="scoreSeven(scoreOutput)"> </button>
-<button type="button" class="button4Circle" id="targetSix" onclick="scoreSix(scoreOutput)"> ok </button>
-<button type="button" class="button5Circle" id="targetFive" onclick="scoreFive(scoreOutput)"> ok </button>  
+     <!-- Below are all of the target buttons used for the shooting target -->
+    <button type="button" class="button0Circle" id="targetTen" onclick="scoreTen(scoreOutput)"> ok </button>
+    <button type="button" class="button1Circle" id="targetNine" onclick="scoreNine(scoreOutput)"> ok </button>
+    <button type="button" class="button2Circle" id="targetEight" onclick="scoreEight(scoreOutput)"> ok </button>
+    <button type="button" class="button3Circle" id="targetSeven" onclick="scoreSeven(scoreOutput)"> </button>
+    <button type="button" class="button4Circle" id="targetSix" onclick="scoreSix(scoreOutput)"> ok </button>
+    <button type="button" class="button5Circle" id="targetFive" onclick="scoreFive(scoreOutput)"> ok </button>  
 </div> 
 
+<div>
 <!-- Seperates the Finish Shoot button to below the target-->
 <br>
 <br>
@@ -156,6 +176,7 @@
 <br>
 <br>
 <button id="btnFinishShoot" type="submit" class="loginButton" onclick="finishShoot()">Finish Shoot</button>
+</div>
 </div>
 
 

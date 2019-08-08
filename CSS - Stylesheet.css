@@ -2,6 +2,7 @@
 
 .rightElements {
   float: right;
+  padding: 2em
 }
 /* oh god fix these colours later */
 .loginButton {
@@ -172,5 +173,14 @@
   background-color: rgb(188, 198, 245);
   height: 10%;
   text-align: center;
+  padding-bottom: 1em;
+}
+
+#loginPage {
+  padding: 1em;
+}
+
+#targetPage {
+  padding: 1em;
 }
 
