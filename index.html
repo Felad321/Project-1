@@ -4,14 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<<<<<<< HEAD
-    <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-=======
     <title>Shooting Program</title>
-
     <link rel="stylesheet" type="text/css" href="CSS - Stylesheet.css"> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
 </head>
 <body class="body2">
 <div id="commonFeatures">
@@ -22,6 +17,7 @@
         <h1 class="display-1"> Rifle Shooting Scoring System </h1>
 </div>
 </div>
+<body onload="scoreboardSort()"></body>
 <div id="loginPage">
         <!-- L O G I N   P A G E  -->
 
@@ -127,7 +123,7 @@
         <svg width="400" height="100" >
             <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
             
-            <text x="15" y="25" fill="black" id="targetCountOutput">Shot Count</text>
+            <text id="scoreboardOutput" x="15" y="25" fill="black" id="targetCountOutput">Shot Count</text>
         </svg>
     </div>
 

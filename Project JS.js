@@ -66,6 +66,7 @@ function selectUserName() {
   var usernameIndex = document.getElementById("ddown").value;
   console.log(usernameIndex);
   document.getElementById("targetUsernameOutput").innerHTML = retrievedArrayProper[usernameIndex].personName;
+
 }
 
 function searchUser() {
@@ -365,7 +366,7 @@ function scoreTen(scoreOutput){
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
   document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
-
+/*
 var scores = [];
 
 function sortScores(){
@@ -389,4 +390,54 @@ while (unsortedScores != 0){
 scoreboard.value = scores + "\n";
 scores = sortedScores;
 }
+*/
+function scoreboardSort() {
+  //The following lines display the insertion sort algorithm which sorts the array
+  var addText = ""
+  var boardCounter = 1
 
+  for(x=0;x < retrievedArrayProper.length; x++){
+    for(i=0;i < retrievedArrayProper[x].personScores.length; i++){
+     tempArray = retrievedArrayProper[x].personScores;
+     first = 0;
+      last = tempArray.length - 1;
+      positionOfNext = last - 1;
+
+      while (positionOfNext >= first) {
+        next = tempArray[positionOfNext];
+        current = positionOfNext;
+        while (
+          current < last &&
+         next > tempArray[current + 1]
+      ) {
+        current++;
+         tempArray[current - 1] = tempArray[current];
+      }
+      tempArray[current] = next;
+      positionOfNext -= 1;
+    }
+     
+     
+    }sortedScores = tempArray.reverse();
+    console.log(sortedScores)
+
+    
+    
+
+    addText = addText + boardCounter + ". " + retrievedArrayProper[x].personName + " " + sortedScores[0] + "<br>"
+    console.log(addText)
+    boardCounter++
+    // try using Tspan
+    var scoreText = document.createElement("scoreText");
+
+    /*
+    var option = document.createElement("option");
+      option.value = i
+      option.text = retrievedArraySelectProper[i].personName
+      selectbox.add(option)
+      */
+  } 
+  document.getElementById("scoreboard").innerHTML += addText
+  return;
+ 
+}
