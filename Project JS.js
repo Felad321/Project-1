@@ -15,6 +15,8 @@
   var timer = null;
 // End of Global Variables
 
+
+
 // Timer function that records the total time taken for the shoot
 function incrementTimer () {
   time += 1;
@@ -85,8 +87,7 @@ function searchUser() {
 
 
 /* Insertion Sort and Binary Search used and modified under permission by Krishen T.
-Retrieved from: https://github.com/128234/New-SDD-Prelim-Site/blob/master/script.js
-*/
+Retrieved from: https://github.com/128234/New-SDD-Prelim-Site/blob/master/script.js */
 
 function insertionSort() {
   //The following lines display the insertion sort algorithm which sorts the array
@@ -416,20 +417,78 @@ function scoreboardSort() {
       tempArray[current] = next;
       positionOfNext -= 1;
     }
-     
+    
      
     }sortedScores = tempArray.reverse();
     console.log(sortedScores)
+    retrievedArrayProper[x].personScores = sortedScores
+    console.log("PERSONSCORES: " + retrievedArrayProper[x].personScores)
+
+    //addText = addText + boardCounter + ". " + retrievedArrayProper[x].personName + " " + sortedScores[0] + "<br>"
+    //console.log(addText)
+    
+    //
 
     
-    
+    /*
+    sortArrayScores();
+    //  
 
-    addText = addText + boardCounter + ". " + retrievedArrayProper[x].personName + " " + sortedScores[0] + "<br>"
-    console.log(addText)
+    switch (x) {
+      case 0:
+        document.getElementById("place1").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place1").style.display = "block";
+        break;
+      case 1:
+        document.getElementById("place2").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place2").style.display = "block";
+        break;
+      case 2:
+        document.getElementById("place3").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place3").style.display = "block";
+        break;
+      case 3:
+        document.getElementById("place4").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place4").style.display = "block";
+        break;
+      case 4:
+        document.getElementById("place5").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place5").style.display = "block";
+        break;
+      case 5:
+        document.getElementById("place6").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place6").style.display = "block";
+        break;
+      case 6:
+        document.getElementById("place7").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place7").style.display = "block";
+        break;
+      case 7:
+        document.getElementById("place8").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place8").style.display = "block";
+        break;
+      case 8:
+        document.getElementById("place9").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place9").style.display = "block";
+        break;
+      case 9:
+        document.getElementById("place1").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+        document.getElementById("place1").style.display = "block";
+        break;
+      case 10:
+         document.getElementById("place10").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
+         document.getElementById("place10").style.display = "block";
+         break;
+    }
     boardCounter++
-    // try using Tspan
+    */
+    /*
     var scoreText = document.createElement("scoreText");
+        scoreText.text = addText;
+        scoreboard.add(scoreText);
 
+        console.log(scoreText)
+*/
     /*
     var option = document.createElement("option");
       option.value = i
@@ -437,7 +496,97 @@ function scoreboardSort() {
       selectbox.add(option)
       */
   } 
-  document.getElementById("scoreboard").innerHTML += addText
+
+  // sortedScores[0]
+  sortArrayScores();
+
+  for(y=0;y < retrievedArrayProper.length;y++){
+  switch (y) {
+    case 0:
+      document.getElementById("place1").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place1").style.display = "block";
+      break;
+    case 1:
+      document.getElementById("place2").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place2").style.display = "block";
+      break;
+    case 2:
+      document.getElementById("place3").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place3").style.display = "block";
+      break;
+    case 3:
+      document.getElementById("place4").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place4").style.display = "block";
+      break;
+    case 4:
+      document.getElementById("place5").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place5").style.display = "block";
+      break;
+    case 5:
+      document.getElementById("place6").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place6").style.display = "block";
+      break;
+    case 6:
+      document.getElementById("place7").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place7").style.display = "block";
+      break;
+    case 7:
+      document.getElementById("place8").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place8").style.display = "block";
+      break;
+    case 8:
+      document.getElementById("place9").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place9").style.display = "block";
+      break;
+    case 9:
+      document.getElementById("place1").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place1").style.display = "block";
+      break;
+    case 10:
+       document.getElementById("place10").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+       document.getElementById("place10").style.display = "block";
+       break;
+  }
+  boardCounter++
+}
+  //document.getElementById("scoreboard").innerHTML += addText
   return;
  
+  
+
+
+
+
+}
+ 
+function swap(a,b) {
+  var temp = a
+  a = b
+  b = temp
+  return [a,b];
+}
+
+function sortArrayScores() {
+
+  tempArray = retrievedArrayProper;
+    first = 0;
+    last = tempArray.length - 1;
+    positionOfNext = last - 1;
+  
+    while (positionOfNext >= first) {
+      next = tempArray[positionOfNext];
+      current = positionOfNext;
+      while (
+        current < last &&
+        next.personScores[0] < tempArray[current + 1].personScores[0]
+      ) {
+        current++;
+        tempArray[current - 1] = tempArray[current];
+      }
+      tempArray[current] = next;
+      positionOfNext -= 1;
+    }
+    retrievedArrayProper = tempArray;
+    return;
+
 }
