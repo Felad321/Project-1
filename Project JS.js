@@ -1,4 +1,3 @@
-
 // Global Variables below
   var flagCreateUser = false
   var flagSearch = false
@@ -14,7 +13,6 @@
   var time = 0;
   var timer = null;
 // End of Global Variables
-
 
 
 // Timer function that records the total time taken for the shoot
@@ -317,57 +315,81 @@ function shotLimit (amount){
        console.log("Time taken was " + time);
     }
   } 
-
   if (shotCount == 1) {
     timer = setInterval(incrementTimer, 1000);
+  }
+}
+
+function shotAverage(totalScore,shotCount){
+  for(i=0; i<=shotCount; i++){
+    averageScore = Math.floor(totalScore/shotCount)
+    console.log(averageScore);
   }
 }
 
 /* The below functions are the scoring functions. They change the shooter's score and the shown output */
 function scoreFive(scoreOutput){
   shotLimit(5);
+  shotAverage(totalScore,shotCount);
   document.getElementById("score").innerHTML = "Total score is " + totalScore;
   document.getElementById("score").style.display = "block"
+  document.getElementById("average").innerHTML = "Shot average is " + averageScore;
+  document.getElementById("average").style.display = "block"
   document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
   document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreSix(scoreOutput){
   shotLimit(6);
+  shotAverage(totalScore,shotCount);
   document.getElementById("score").innerHTML = "Total score is " + totalScore;
   document.getElementById("score").style.display = "block"
+  document.getElementById("average").innerHTML = "Shot average is " + averageScore;
+  document.getElementById("average").style.display = "block"
   document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
   document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreSeven(scoreOutput){
   shotLimit(7);
+  shotAverage(totalScore,shotCount);
   document.getElementById("score").innerHTML = "Total score is " + totalScore;
   document.getElementById("score").style.display = "block"
+  document.getElementById("average").innerHTML = "Shot average is " + averageScore;
+  document.getElementById("average").style.display = "block"
   document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
   document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreEight(scoreOutput){
   shotLimit(8);
+  shotAverage(totalScore,shotCount);
   document.getElementById("score").innerHTML = "Total score is " + totalScore;
   document.getElementById("score").style.display = "block"
+  document.getElementById("average").innerHTML = "Shot average is " + averageScore;
+  document.getElementById("average").style.display = "block"
   document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
   document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreNine(scoreOutput){
   shotLimit(9);
+  shotAverage(totalScore,shotCount);
  document.getElementById("score").innerHTML = "Total score is " + totalScore;
  document.getElementById("score").style.display = "block"
+ document.getElementById("average").innerHTML = "Shot average is " + averageScore;
+ document.getElementById("average").style.display = "block"
  document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
  document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreTen(scoreOutput){
   shotLimit(10);
+  shotAverage(totalScore,shotCount);
   document.getElementById("score").innerHTML = "Total score is " + totalScore;
   document.getElementById("score").style.display = "block"
+  document.getElementById("average").innerHTML = "Shot average is " + averageScore;
+  document.getElementById("average").style.display = "block"
   document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
   document.getElementById("shotCountOutput").style.display = "block"
 }
@@ -485,3 +507,4 @@ function sortArrayScores() {
     retrievedArrayProper = tempArray;
     return;
 }
+
