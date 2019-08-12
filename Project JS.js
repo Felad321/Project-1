@@ -20,17 +20,16 @@
 // Timer function that records the total time taken for the shoot
 function incrementTimer () {
   time += 1;
-document.getElementById("targetShootDataOutput").innerHTML = "Time is " + time + " seconds!";
+  document.getElementById("timerOutput").innerHTML = "Time is " + time + " seconds!";
 }
 
+// This function creates a new user, and pushes it to the local storage
 function createUser() {
 
     userEntered = {
     personName: document.getElementById("personName").value,
-    personScores: []
-    
+    personScores: [] 
   };
-
   //  console.log("first is " + userEntered.personFirstName);
     document.getElementById("targetUsernameOutput").innerHTML = userEntered.personName;
     var previousObject = localStorage.getItem("userEntered");
@@ -39,15 +38,15 @@ function createUser() {
     // Stores the user object in local storage
     localStorage.setItem("userEntered", JSON.stringify(userEntered));
     var retrievedObject = localStorage.getItem("userEntered");
-   console.log("retrievedObject: ", JSON.parse(retrievedObject));
+    console.log("retrievedObject: ", JSON.parse(retrievedObject));
 
-    flagCreateUser = true
-
-  
+    flagCreateUser = true 
 }
 
+/* This function creates the options in the option box, and checks if the box has already been opened 
+   to prevent duplicates being created*/
 function selectUser() {
-  selectbox = document.getElementById("ddown")
+  selectbox = document.getElementById("optionBoxes")
   var retrievedArraySelect = localStorage.getItem("userArray")
   var retrievedArraySelectProper = JSON.parse(retrievedArraySelect)
   
@@ -68,18 +67,21 @@ function selectUser() {
   flagSelectUserOpened = true
 }
 
+// This function is used to get the value of the selected user and go to the target page
 function selectUserName() {
-  var usernameIndex = document.getElementById("ddown").value;
-  console.log(usernameIndex);
-  document.getElementById("targetUsernameOutput").innerHTML = retrievedArrayProper[usernameIndex].personName;
+  var usernameIndex = document.getElementById("optionBoxes").value;
+  //console.log(usernameIndex);
+  document.getElementById("shooterName").innerHTML = retrievedArrayProper[usernameIndex].personName;
+  document.getElementById("shooterName").style.display = "block"
 
 }
 
+// This function is called for providing an existing user, and checks if the input user is valid
 function searchUser() {
   insertionSort();
   userIndex = binarySearch();
   flagSearch = true
-  console.log(userIndex)
+  //console.log(userIndex)
 
   if(userIndex === false){
     window.alert("That is not a valid user. Please try again.")
@@ -93,6 +95,7 @@ function searchUser() {
 /* Insertion Sort and Binary Search used and modified under permission by Krishen T.
 Retrieved from: https://github.com/128234/New-SDD-Prelim-Site/blob/master/script.js */
 
+/* Insertion sort and binary sort are used for dearching and logging into an existing user */
 function insertionSort() {
   //The following lines display the insertion sort algorithm which sorts the array
   tempArray = retrievedArrayProper;
@@ -158,7 +161,8 @@ if(retrievedArrayProper.length == 0) {
 }
 
 
-
+/* This function is the primary function of storage, editing/pushing users to the local storage to save
+   their scores and users. Function checks and stores according to which login option was chosen */
 function finishShoot(){
   console.log(totalScore)
   // Retrieves the stored array
@@ -166,7 +170,7 @@ function finishShoot(){
 
   if(flagCreateUser == true){
     userEntered.personScores.push(totalScore)
-    console.log(userEntered);
+  //  console.log(userEntered);
   
     
   if (userArray == null){
@@ -175,65 +179,47 @@ function finishShoot(){
   
   userArray.push(userEntered);
   localStorage.setItem("userArray", JSON.stringify(userArray));
-  console.log(userArray)
+  //console.log(userArray)
 
   } else if(flagSearch == true){
     var retrievedUser = retrievedArrayProper[userIndex];
-        console.log(retrievedUser)
+      //  console.log(retrievedUser)
         retrievedUser.personScores.push(totalScore);
-        console.log(retrievedUser.personScores)
+      //  console.log(retrievedUser.personScores)
 
         retrievedArrayProper.splice(userIndex,1)
-        console.log("SEARCH post delete: " + JSON.stringify(retrievedArrayProper))
+      //  console.log("SEARCH post delete: " + JSON.stringify(retrievedArrayProper))
         retrievedArrayProper.splice(userIndex,0,retrievedUser)
-        console.log("SEARCH post add: " + JSON.stringify(retrievedArrayProper))
+      //  console.log("SEARCH post add: " + JSON.stringify(retrievedArrayProper))
     
         
-        console.log(retrievedArrayProper)
+      //  console.log(retrievedArrayProper)
         localStorage.setItem("userArray", JSON.stringify(retrievedArrayProper));
         
 
     } else{
           
-    console.log("it works!!!!111!!!")
+    //console.log("it works!!!!111!!!")
 
-    var addScore = document.getElementById("ddown").value
+    var addScore = document.getElementById("optionBoxes").value
     console.log(addScore);
-
-/*    var retrievedArray = localStorage.getItem("userArray");
-    var retrievedArrayProper = JSON.parse(retrievedArray);
-      console.log("testArray is: " + retrievedArrayProper);
-      console.log("retrievedArray: ", retrievedArray); */
     var retrievedUser = retrievedArrayProper[addScore]
-      console.log(retrievedUser);
-      retrievedUser.personScores.push(totalScore)
-      console.log(retrievedUser.personScores)
+     // console.log(retrievedUser);
+    retrievedUser.personScores.push(totalScore)
+     // console.log(retrievedUser.personScores)
     //console.log("retrieved array user: ", retrievedArray[2])
 
     retrievedArrayProper.splice(addScore,1)
-    console.log("SELECT post delete: " + JSON.stringify(retrievedArrayProper))
+     //console.log("SELECT post delete: " + JSON.stringify(retrievedArrayProper))
     retrievedArrayProper.splice(addScore,0,retrievedUser)
-    console.log("SELECT post add: " + JSON.stringify(retrievedArrayProper))
-
-    
-    console.log(retrievedArrayProper)
+     //console.log("SELECT post add: " + JSON.stringify(retrievedArrayProper))
+    //console.log(retrievedArrayProper)
     localStorage.setItem("userArray", JSON.stringify(retrievedArrayProper));
-    
     }
-  
-  
-  console.log("BREAK TIME AAAAAAAAAAAAAAAAAAAAAAAAA")
-
-
 
   if (totalScore == 100){
     window.alert("Congratulations, you scored a perfect shoot!")
   }
-
-  //var addScore = document.getElementById("ddown").value
-  //console.log(addScore);
-
-
  // location.reload()
  // PUT BACK IN LATER
   
@@ -255,6 +241,7 @@ function hideFunc() {
   }
 }
 
+// This function shows the 'Create new user' option at the login page
 function showCreate() {
   var create = document.getElementById("userCreateHTML");
   var login = document.getElementById("loginPage");
@@ -276,6 +263,7 @@ function showCreate() {
   }
 }
 
+// This function shows the 'Login to an existing user' at the login page
 function showLogin() {
   var exist = document.getElementById("userExistHTML");
   var login = document.getElementById("loginPage");
@@ -297,6 +285,7 @@ function showLogin() {
   }
 }
 
+// This function shows the search ('Provide the name of an existing user') option at the login page
 function showSearch() {
   var search = document.getElementById("userSearchHTML");
   var login = document.getElementById("loginPage");
@@ -318,9 +307,7 @@ function showSearch() {
   }
 }
 
-
-
-// Shot limit function
+// Shot limit function, limits amount of possible shots input
 function shotLimit (amount){
   if(shotCount != 10){
     shotCount += 1;
@@ -336,42 +323,56 @@ function shotLimit (amount){
   }
 }
 
+/* The below functions are the scoring functions. They change the shooter's score and the shown output */
 function scoreFive(scoreOutput){
   shotLimit(5);
-  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
-  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("score").innerHTML = "Total score is " + totalScore;
+  document.getElementById("score").style.display = "block"
+  document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreSix(scoreOutput){
   shotLimit(6);
-  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
-  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("score").innerHTML = "Total score is " + totalScore;
+  document.getElementById("score").style.display = "block"
+  document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreSeven(scoreOutput){
   shotLimit(7);
-  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
-  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("score").innerHTML = "Total score is " + totalScore;
+  document.getElementById("score").style.display = "block"
+  document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreEight(scoreOutput){
   shotLimit(8);
-  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
-  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("score").innerHTML = "Total score is " + totalScore;
+  document.getElementById("score").style.display = "block"
+  document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreNine(scoreOutput){
   shotLimit(9);
- document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
- document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
+ document.getElementById("score").innerHTML = "Total score is " + totalScore;
+ document.getElementById("score").style.display = "block"
+ document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
+ document.getElementById("shotCountOutput").style.display = "block"
 }
 
 function scoreTen(scoreOutput){
   shotLimit(10);
-  document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
-  document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("score").innerHTML = "Total score is " + totalScore;
+  document.getElementById("score").style.display = "block"
+  document.getElementById("shotCountOutput").innerHTML = "Shot count is " + shotCount;
+  document.getElementById("shotCountOutput").style.display = "block"
 }
 
+// This function sorts the user scores so it can be used to sort the scoreboard.
 function scoreboardSort() {
   //The following lines display the insertion sort algorithm which sorts the array
   var addText = ""
@@ -400,15 +401,15 @@ function scoreboardSort() {
     
      
     }sortedScores = tempArray.reverse();
-    console.log(sortedScores)
+    //console.log(sortedScores)
     retrievedArrayProper[x].personScores = sortedScores
-    console.log("PERSONSCORES: " + retrievedArrayProper[x].personScores)
+    //console.log("PERSONSCORES: " + retrievedArrayProper[x].personScores)
 
   } 
-
-  // sortedScores[0]
   sortArrayScores();
 
+  /* This switch displays all of the top shooters in the user array by score,
+     and checks if there is a user to display. */
   for(y=0;y < retrievedArrayProper.length;y++){
   switch (y) {
     case 0:
@@ -457,26 +458,12 @@ function scoreboardSort() {
        break;
   }
   boardCounter++
-}
-  //document.getElementById("scoreboard").innerHTML += addText
-  return;
- 
-  
-
-
-
-
-}
- 
-function swap(a,b) {
-  var temp = a
-  a = b
-  b = temp
-  return [a,b];
+ }
+ return;
 }
 
+// This function sorts the user array by the shooter's score so the scoreboard can be displayed later in order
 function sortArrayScores() {
-
   tempArray = retrievedArrayProper;
     first = 0;
     last = tempArray.length - 1;
@@ -497,5 +484,4 @@ function sortArrayScores() {
     }
     retrievedArrayProper = tempArray;
     return;
-
 }

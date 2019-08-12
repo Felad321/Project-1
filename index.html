@@ -84,7 +84,7 @@
 
     <div id="userExistHTML" style="display: none">
         <!-- Login choice elements -->
-        <select id='ddown'>
+        <select id='optionBoxes'>
             <option id = "selectUser" value="">Select your user</option>
         </select>
         <br>
@@ -117,27 +117,34 @@
         <svg width="400" height="100" >
             <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5"/>
             
-            <text x="15" y="25" fill="black" id="targetUsernameOutput">Shooter Name</text>
+            <text x="15" y="25" fill="black" id="targetUsernameOutput">Shooter Name:
+                <tspan x="15" y="45" id="shooterName" style="display: none"> Test Line1</tspan>
+            </text>
         </svg>
         <br>
         <svg width="400" height="100" >
             <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
             
-            <text x="15" y="25" fill="black" id="targetScoreOutput">Your Score</text>
-                <tspan x="15" y="45" id="score" style="display: block"> Test Line1</tspan>
-                <tspan x="15" y="65" id="average" style="display: block"> Test Line1</tspan>
+            <text x="15" y="25" fill="black" id="targetInfoOutput">Shoot Information:
+                <tspan x="15" y="45" id="score" style="display: none"> Test Line1</tspan>
+                <tspan x="15" y="65" id="average" style="display: none"> Test Line1</tspan>
+            </text>
         </svg>
         <br>
         <svg width="400" height="100" >
             <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
             
-            <text x="15" y="25" fill="black" id="targetShootDataOutput">Timer</text>
+            <text x="15" y="25" fill="black" id="timerOutputBox">Timer:
+                <tspan x="15" y="45" id="timerOutput" style="display: block"> Shoot has not begun.</tspan>
+            </text>
         </svg>
         <br>
         <svg width="400" height="100" >
             <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
             
-            <text id="scoreboardOutput" x="15" y="25" fill="black" id="targetCountOutput">Shot Count</text>
+            <text x="15" y="25" fill="black" id="targetCountOutput">Shot Count:
+                <tspan x="15" y="45" id="shotCountOutput" style="display: none"> Invisible Text</tspan>
+            </text>
         </svg>
     </div>
 
