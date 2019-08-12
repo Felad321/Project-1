@@ -2,6 +2,7 @@
 // Global Variables below
   var flagCreateUser = false
   var flagSearch = false
+  var flagSelectUserOpened = false
   var retrievedArray = localStorage.getItem("userArray");
   var retrievedArrayProper = JSON.parse(retrievedArray);
   console.log("testArray is: " + retrievedArrayProper);
@@ -9,7 +10,6 @@
   // Below are the scoring functions, which are called whenever one of the target buttons are clicked
   var totalScore = 0;
   var scoreOutput = 0;
-  var stopwatch;
   var shotCount = 0
   var time = 0;
   var timer = null;
@@ -42,7 +42,7 @@ function createUser() {
    console.log("retrievedObject: ", JSON.parse(retrievedObject));
 
     flagCreateUser = true
-  
+
   
 }
 
@@ -50,18 +50,22 @@ function selectUser() {
   selectbox = document.getElementById("ddown")
   var retrievedArraySelect = localStorage.getItem("userArray")
   var retrievedArraySelectProper = JSON.parse(retrievedArraySelect)
-
+  
+  if(flagSelectUserOpened === false){
    for(i=0;i<retrievedArraySelectProper.length;i++){
   
+      //select.option.remove[i]
       var option = document.createElement("option");
       option.value = i
       option.text = retrievedArraySelectProper[i].personName
       selectbox.add(option)
-
-   }
+      flagCreateUser = false
+   } } else {
 
   flagCreateUser = false
-
+  
+   }
+  flagSelectUserOpened = true
 }
 
 function selectUserName() {
@@ -367,31 +371,7 @@ function scoreTen(scoreOutput){
   document.getElementById("targetScoreOutput").innerHTML = "Total score is " + totalScore;
   document.getElementById("targetCountOutput").innerHTML = "Shot count is " + shotCount;
 }
-/*
-var scores = [];
 
-function sortScores(){
-  var unsortedScores = scores;
-  var sortedScores = [];
-  var highest = 0; 
-  var highestIndex = 0;
-
-while (unsortedScores != 0){
-  highest = unsortedScores[0];
-  highestIndex = 0;
-  for (var i = 0; i < unsortedScores.length; i++){
-    if (unsortedScores[i] > highest){
-      highest = unsortedScores[i];
-      highestIndex = i;
-    }
-  }
-  sortedScores.push(highest);
-  unsortedScores.splice(highestIndex, 1);
-}
-scoreboard.value = scores + "\n";
-scores = sortedScores;
-}
-*/
 function scoreboardSort() {
   //The following lines display the insertion sort algorithm which sorts the array
   var addText = ""
@@ -424,77 +404,6 @@ function scoreboardSort() {
     retrievedArrayProper[x].personScores = sortedScores
     console.log("PERSONSCORES: " + retrievedArrayProper[x].personScores)
 
-    //addText = addText + boardCounter + ". " + retrievedArrayProper[x].personName + " " + sortedScores[0] + "<br>"
-    //console.log(addText)
-    
-    //
-
-    
-    /*
-    sortArrayScores();
-    //  
-
-    switch (x) {
-      case 0:
-        document.getElementById("place1").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place1").style.display = "block";
-        break;
-      case 1:
-        document.getElementById("place2").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place2").style.display = "block";
-        break;
-      case 2:
-        document.getElementById("place3").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place3").style.display = "block";
-        break;
-      case 3:
-        document.getElementById("place4").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place4").style.display = "block";
-        break;
-      case 4:
-        document.getElementById("place5").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place5").style.display = "block";
-        break;
-      case 5:
-        document.getElementById("place6").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place6").style.display = "block";
-        break;
-      case 6:
-        document.getElementById("place7").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place7").style.display = "block";
-        break;
-      case 7:
-        document.getElementById("place8").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place8").style.display = "block";
-        break;
-      case 8:
-        document.getElementById("place9").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place9").style.display = "block";
-        break;
-      case 9:
-        document.getElementById("place1").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-        document.getElementById("place1").style.display = "block";
-        break;
-      case 10:
-         document.getElementById("place10").innerHTML = boardCounter + ". " + retrievedArrayProper[x].personName +" "  + sortedScores[0];
-         document.getElementById("place10").style.display = "block";
-         break;
-    }
-    boardCounter++
-    */
-    /*
-    var scoreText = document.createElement("scoreText");
-        scoreText.text = addText;
-        scoreboard.add(scoreText);
-
-        console.log(scoreText)
-*/
-    /*
-    var option = document.createElement("option");
-      option.value = i
-      option.text = retrievedArraySelectProper[i].personName
-      selectbox.add(option)
-      */
   } 
 
   // sortedScores[0]
