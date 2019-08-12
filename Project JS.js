@@ -471,13 +471,10 @@ function scoreboardSort() {
       document.getElementById("place9").style.display = "block";
       break;
     case 9:
-      document.getElementById("place1").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
-      document.getElementById("place1").style.display = "block";
+      document.getElementById("place10").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
+      document.getElementById("place10").style.display = "block";
       break;
-    case 10:
-       document.getElementById("place10").innerHTML = boardCounter + ". " + retrievedArrayProper[y].personName +" "  + retrievedArrayProper[y].personScores[0];
-       document.getElementById("place10").style.display = "block";
-       break;
+  
   }
   boardCounter++
  }

@@ -6,16 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shooting Program</title>
     <link rel="stylesheet" type="text/css" href="CSS - Stylesheet.css"> 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway&display=swap" rel="stylesheet">
 </head>
 <body class="body2">
 <div id="commonFeatures">
 
     <!-- Title of the program in web browser -->
     <link rel="stylesheet" type="css/text" href="CSS - Stylesheet.css">
-        <div class="container-fluid" id="header" >
-        <h1 class="display-1"> Rifle Shooting Scoring System </h1>
-</div>
+        <div class="container-fluid" id="header">      
+        <img src="file:///Users/sammartin/Downloads/target.svg" style="width:120px;height:120px; padding-bottom:16px; padding-top: 24px; ">
+        <br>
+        <h1> Rifle Shooting Scoring System </h1>
+        </div>
 </div>
 <body onload="scoreboardSort()"></body>
 <div id="loginPage">
@@ -27,18 +30,27 @@
 
         <div class="rightElements">
                 <svg width="400" height="500">
-                    <rect width="400" height="500" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
+                    
                         
                     <text x="15" y="25" fill="black" id="scoreboard">Scoreboard
                         <tspan x="15" y="55" id="place1" style="display: none"> Test Line1</tspan>
+                        <tspan x="15" y="63" class="divider"> ______________________________________________________</tspan>
                         <tspan x="15" y="85" id="place2" style="display: none"> Test Line2</tspan>
+                        <tspan x="15" y="93" class="divider"> ______________________________________________________</tspan>
                         <tspan x="15" y="115" id="place3" style="display: none"> Test Line3</tspan>
+                        <tspan x="15" y="123" class="divider"> ______________________________________________________</tspan>
                         <tspan x="15" y="145" id="place4" style="display: none"> Test Line4</tspan>
+                        <tspan x="15" y="153" class="divider"> ______________________________________________________</tspan>
                         <tspan x="15" y="175" id="place5" style="display: none"> Test Line5</tspan>
+                        <tspan x="15" y="183" class="divider"> ______________________________________________________</tspan>
                         <tspan x="15" y="205" id="place6" style="display: none"> Test Line6</tspan>
+                        <tspan x="15" y="213" class="divider"> ______________________________________________________</tspan>
                         <tspan x="15" y="235" id="place7" style="display: none"> Test Line7</tspan>
+                        <tspan x="15" y="243" class="divider"> ______________________________________________________</tspan>
                         <tspan x="15" y="265" id="place8" style="display: none"> Test Line8</tspan>
+                        <tspan x="15" y="273" class="divider"> ______________________________________________________</tspan>
                         <tspan x="15" y="295" id="place9" style="display: none"> Test Line9</tspan>
+                        <tspan x="15" y="303" class="divider"> ______________________________________________________</tspan>
                         <tspan x="15" y="325" id="place10" style="display: none"> Test Line10</tspan>
                         
                     </text>
@@ -48,14 +60,7 @@
         <h3 class="text-muted"> Login Page </h3>
 </div>
 </div> 
-<div class="container-fluid">
-        <span class="border">  
-        <br>
-        <p class="lead"> Enter filler content here! :)</p> <!-- Fill in this -->
-        </span>
 
-      
-</div>
 <br>
 <br>
 
@@ -143,7 +148,7 @@
             <rect width="400" height="100" style="fill:white;stroke:black;stroke-width:5;opacity:0.5" />
             
             <text x="15" y="25" fill="black" id="targetCountOutput">Shot Count:
-                <tspan x="15" y="45" id="shotCountOutput" style="display: block"> Invisible Text</tspan>
+                <tspan x="15" y="45" id="shotCountOutput" style="display: none"> Invisible Text</tspan>
             </text>
         </svg>
     </div>
@@ -152,12 +157,7 @@
         <h3 class="text-muted"> Target Page </h3>
     </div>
 
-    <div class="container-fluid">
-        <span class="border">  
-         <br>
-         <p class="lead"> Enter filler content here! :)</p> 
-        </span>
-    </div>
+    
 
 
 
@@ -167,7 +167,7 @@
 
 <div>
      <!-- Below are all of the target buttons used for the shooting target -->
-    <button type="button" class="button0Circle" id="targetTen" onclick="scoreTen(scoreOutput)"> ok </button>
+    <button type="button" class="button0Circle" id="targetTen" onclick="scoreTen(scoreOutput)">  </button>
     <button type="button" class="button1Circle" id="targetNine" onclick="scoreNine(scoreOutput)"> ok </button>
     <button type="button" class="button2Circle" id="targetEight" onclick="scoreEight(scoreOutput)"> ok </button>
     <button type="button" class="button3Circle" id="targetSeven" onclick="scoreSeven(scoreOutput)"> </button>

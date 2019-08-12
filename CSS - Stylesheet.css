@@ -16,7 +16,7 @@
 
 
 .loginButton:hover {
-  background-color: #4CAF50; /* Green */
+  background-color: rgb(238, 98, 98); /* Green */
   color: white;
   font-size: 24px;
 }
@@ -170,7 +170,7 @@
 }
 
 #header {
-  background-color: rgb(188, 198, 245);
+  background-color: rgb(238, 98, 98);
   height: 10%;
   text-align: center;
   padding-bottom: 1em;
@@ -184,3 +184,11 @@
   padding: 1em;
 }
 
+#h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 26pt;
+}
+
+.divider {
+  stroke: #DFDEE3
+}
