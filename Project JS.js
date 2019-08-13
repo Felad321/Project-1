@@ -4,8 +4,6 @@
   var flagSelectUserOpened = false
   var retrievedArray = localStorage.getItem("userArray");
   var retrievedArrayProper = JSON.parse(retrievedArray);
-  console.log("testArray is: " + retrievedArrayProper);
-  console.log("retrievedArray: ", retrievedArray);
   // Below are the scoring functions, which are called whenever one of the target buttons are clicked
   var totalScore = 0;
   var scoreOutput = 0;
@@ -28,15 +26,12 @@ function createUser() {
     personName: document.getElementById("personName").value,
     personScores: [] 
   };
-  //  console.log("first is " + userEntered.personFirstName);
     document.getElementById("targetUsernameOutput").innerHTML = userEntered.personName;
     var previousObject = localStorage.getItem("userEntered");
-  //  console.log(JSON.parse(previousObject))
 
     // Stores the user object in local storage
     localStorage.setItem("userEntered", JSON.stringify(userEntered));
     var retrievedObject = localStorage.getItem("userEntered");
-    console.log("retrievedObject: ", JSON.parse(retrievedObject));
 
     flagCreateUser = true 
 }
@@ -68,7 +63,6 @@ function selectUser() {
 // This function is used to get the value of the selected user and go to the target page
 function selectUserName() {
   var usernameIndex = document.getElementById("optionBoxes").value;
-  //console.log(usernameIndex);
   document.getElementById("shooterName").innerHTML = retrievedArrayProper[usernameIndex].personName;
   document.getElementById("shooterName").style.display = "block"
 
@@ -79,7 +73,7 @@ function searchUser() {
   insertionSort();
   userIndex = binarySearch();
   flagSearch = true
-  //console.log(userIndex)
+
 
   if(userIndex === false){
     window.alert("That is not a valid user. Please try again.")
@@ -162,13 +156,11 @@ if(retrievedArrayProper.length == 0) {
 /* This function is the primary function of storage, editing/pushing users to the local storage to save
    their scores and users. Function checks and stores according to which login option was chosen */
 function finishShoot(){
-  console.log(totalScore)
   // Retrieves the stored array
   userArray = JSON.parse(localStorage.getItem("userArray"));
 
   if(flagCreateUser == true){
     userEntered.personScores.push(totalScore)
-  //  console.log(userEntered);
   
     
   if (userArray == null){
@@ -177,49 +169,32 @@ function finishShoot(){
   
   userArray.push(userEntered);
   localStorage.setItem("userArray", JSON.stringify(userArray));
-  //console.log(userArray)
 
   } else if(flagSearch == true){
     var retrievedUser = retrievedArrayProper[userIndex];
-      //  console.log(retrievedUser)
         retrievedUser.personScores.push(totalScore);
-      //  console.log(retrievedUser.personScores)
 
         retrievedArrayProper.splice(userIndex,1)
-      //  console.log("SEARCH post delete: " + JSON.stringify(retrievedArrayProper))
         retrievedArrayProper.splice(userIndex,0,retrievedUser)
-      //  console.log("SEARCH post add: " + JSON.stringify(retrievedArrayProper))
     
-        
-      //  console.log(retrievedArrayProper)
         localStorage.setItem("userArray", JSON.stringify(retrievedArrayProper));
         
 
     } else{
           
-    //console.log("it works!!!!111!!!")
-
     var addScore = document.getElementById("optionBoxes").value
-    console.log(addScore);
     var retrievedUser = retrievedArrayProper[addScore]
-     // console.log(retrievedUser);
     retrievedUser.personScores.push(totalScore)
-     // console.log(retrievedUser.personScores)
-    //console.log("retrieved array user: ", retrievedArray[2])
 
     retrievedArrayProper.splice(addScore,1)
-     //console.log("SELECT post delete: " + JSON.stringify(retrievedArrayProper))
     retrievedArrayProper.splice(addScore,0,retrievedUser)
-     //console.log("SELECT post add: " + JSON.stringify(retrievedArrayProper))
-    //console.log(retrievedArrayProper)
     localStorage.setItem("userArray", JSON.stringify(retrievedArrayProper));
     }
 
   if (totalScore == 100){
     window.alert("Congratulations, you scored a perfect shoot!")
   }
- // location.reload()
- // PUT BACK IN LATER
+   location.reload()
   
 }
 
@@ -312,7 +287,6 @@ function shotLimit (amount){
     totalScore += amount;
     if(shotCount === 10){
        clearInterval(timer);
-       console.log("Time taken was " + time);
     }
   } 
   if (shotCount == 1) {
@@ -323,7 +297,6 @@ function shotLimit (amount){
 function shotAverage(totalScore,shotCount){
   for(i=0; i<=shotCount; i++){
     averageScore = Math.floor(totalScore/shotCount)
-    console.log(averageScore);
   }
 }
 
@@ -423,9 +396,7 @@ function scoreboardSort() {
     
      
     }sortedScores = tempArray.reverse();
-    //console.log(sortedScores)
     retrievedArrayProper[x].personScores = sortedScores
-    //console.log("PERSONSCORES: " + retrievedArrayProper[x].personScores)
 
   } 
   sortArrayScores();
